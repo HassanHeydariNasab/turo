@@ -94,31 +94,19 @@ z/z = 1
 
 [node name="Materialo" parent="Materialoj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 300, 650 )
+transform/pos = Vector2( 280, 740 )
 
 [node name="Materialo1" parent="Materialoj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 310, 450 )
+transform/pos = Vector2( 280, 540 )
 
 [node name="Materialo2" parent="Materialoj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 300, 180 )
+transform/pos = Vector2( 310, 190 )
 
 [node name="Materialo3" parent="Materialoj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 320, -100 )
-
-[node name="Materialo4" parent="Materialoj" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 420, -330 )
-
-[node name="Materialo5" parent="Materialoj" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 260, -500 )
-
-[node name="Materialo6" parent="Materialoj" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 350, -790 )
+transform/pos = Vector2( 260, -80 )
 
 [node name="PreParto" type="Area2D" parent="."]
 
@@ -223,7 +211,7 @@ margin/right = 0.0
 margin/bottom = 0.0
 custom_styles/grabber_hilite = SubResource( 4 )
 custom_styles/grabber = SubResource( 5 )
-range/min = -3000.0
+range/min = -10000.0
 range/max = 500.0
 range/step = 0.0
 range/page = 0.0
@@ -258,6 +246,26 @@ margin/right = 130.0
 margin/bottom = 79.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "123"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="FPS" type="Label" parent="Kanvaso"]
+
+visibility/visible = false
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 440.0
+margin/top = 10.0
+margin/right = 550.0
+margin/bottom = 99.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
 text = "123"
 valign = 1
 percent_visible = 1.0

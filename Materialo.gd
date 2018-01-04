@@ -2,6 +2,8 @@ extends Area2D
 
 onready var Kasxi = get_node("Kasxi")
 
+var materialo = 100
+
 func _ready():
 	pass
 
@@ -20,6 +22,6 @@ func _on_Materialo_body_enter( korpo ):
 
 func _on_Kasxi_tween_complete( objekto, klavo ):
 	if klavo == "color":
-		T.materialo += 100
+		T.materialo += materialo
 	else:
 		queue_free()

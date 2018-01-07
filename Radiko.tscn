@@ -1,10 +1,18 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Kamero.gd" type="Script" id=2]
 [ext_resource path="res://Materialo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=4]
 [ext_resource path="res://GUI/rekomenci.png" type="Texture" id=5]
+[ext_resource path="res://Sonoj/spiccato/374406__samulis__viola-section-spiccato-c3-violas-spic-c2-v2-rr1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sonoj/spiccato/374407__samulis__viola-section-spiccato-c5-violas-spic-c4-v2-rr1.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Sonoj/spiccato/374434__samulis__viola-section-spiccato-e3-violas-spic-e2-v2-rr2.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Sonoj/spiccato/374435__samulis__viola-section-spiccato-e5-violas-spic-e4-v2-rr2.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Sonoj/spiccato/374437__samulis__viola-section-spiccato-f-3-violas-spic-g2-v2-rr2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sonoj/spiccato/374438__samulis__viola-section-spiccato-f-5-violas-spic-g4-v2-rr2.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Sonoj/pizzicato/374383__samulis__viola-section-pizzicato-c3-violaens-pizz-c2-v2-rr2.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Sonoj/pizzicato/374384__samulis__viola-section-pizzicato-c5-violaens-pizz-c4-v2-rr2.ogg" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -88,9 +96,11 @@ drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 script/script = ExtResource( 2 )
 
+[node name="Partoj" type="Node2D" parent="."]
+
 [node name="Materialoj" type="Node2D" parent="."]
 
-z/z = 1
+editor/display_folded = true
 
 [node name="Materialo" parent="Materialoj" instance=ExtResource( 3 )]
 
@@ -133,6 +143,7 @@ invert/border = 100.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 880 )
@@ -165,6 +176,13 @@ texture/scale = Vector2( 1, 1 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
+
+[node name="T200" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.2
+one_shot = false
+autostart = true
 
 [node name="Kanvaso" type="CanvasLayer" parent="."]
 
@@ -224,7 +242,7 @@ custom_step = -1.0
 
 polygon = Vector2Array( 0, 0, 0, 70, 600, 70, 600, 0 )
 uv = Vector2Array(  )
-color = Color( 1, 1, 1, 1 )
+color = Color( 0.258824, 0.258824, 0.258824, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -245,7 +263,7 @@ margin/top = -10.0
 margin/right = 130.0
 margin/bottom = 79.0
 custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "123"
 valign = 1
 percent_visible = 1.0
@@ -288,6 +306,107 @@ enabled_focus_mode = 2
 shortcut = null
 icon = ExtResource( 5 )
 flat = false
+
+[node name="Fonmuziko" type="StreamPlayer" parent="."]
+
+stream/stream = null
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="C3_spiccato" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 6 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="C5_spiccato" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 7 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="E3_spiccato" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 8 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="E5_spiccato" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 9 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="G3_spiccato" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 10 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="G5_spiccato" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 11 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="C3_pizzicato" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 12 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="C5_pizzicato" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 13 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[connection signal="timeout" from="T200" to="." method="_on_T200_timeout"]
 
 [connection signal="value_changed" from="Kanvaso/H_rulumilo" to="." method="_on_H_rulumilo_value_changed"]
 

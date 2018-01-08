@@ -9,16 +9,16 @@ func _ready():
 
 func _on_Materialo_body_enter( korpo ):
 	clear_shapes()
-	if materialo > 175:
-		T.Radiko.Materialo5_sono.play()
-	elif materialo > 150:
-		T.Radiko.Materialo4_sono.play()
-	elif materialo > 120:
-		T.Radiko.Materialo3_sono.play()
-	elif materialo > 80:
-		T.Radiko.Materialo2_sono.play()
-	elif materialo >= 50:
-		T.Radiko.Materialo1_sono.play()
+	if materialo > 60:
+		T.Radiko.Materialo5_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+	elif materialo > 50:
+		T.Radiko.Materialo4_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+	elif materialo > 40:
+		T.Radiko.Materialo3_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+	elif materialo > 30:
+		T.Radiko.Materialo2_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+	elif materialo <= 30:
+		T.Radiko.Materialo1_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 	var Aspekto = get_node("Aspekto")
 	Kasxi.interpolate_property(Aspekto, "color",
 		Color("ffffff"), Color("D500F9"), 0.25,

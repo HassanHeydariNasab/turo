@@ -31,17 +31,18 @@ var oktavo = 3
 func _ready():
 	T.Radiko = self
 	T.materialo = 100
-	for i in range(-11000, 0, 250):
-		randomize()
-		var Materialo_ = Materialo.instance()
-		var materialo = int(rand_range(50,200))
-		Materialo_.materialo = materialo/2.5
-		Materialo_.set_scale(Vector2(materialo/50, materialo/50))
-		Materialo_.set_global_pos(
-			Vector2(rand_range(300-materialo,300+materialo),
-			i-pow(1.3,abs(i/200))
-		))
-		Materialoj.add_child(Materialo_)
+	if T.modo == 0:
+		for i in range(-11000, 0, 250):
+			randomize()
+			var Materialo_ = Materialo.instance()
+			var materialo = int(rand_range(50,200))
+			Materialo_.materialo = materialo/2.5
+			Materialo_.set_scale(Vector2(materialo/50, materialo/50))
+			Materialo_.set_global_pos(
+				Vector2(rand_range(300-materialo,300+materialo),
+				i-pow(1.3,abs(i/200))
+			))
+			Materialoj.add_child(Materialo_)
 	set_process_input(true)
 	set_fixed_process(true)
 #	set_process(true)
@@ -55,25 +56,25 @@ func _input(evento):
 					PreParto.set_global_pos(get_global_mouse_pos())
 					PreParto.show()
 					Kreski_sono.stop()
-					Kreski_sono.play()
+					Kreski_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 				elif PreParto.is_visible():
 					PreParto.hide()
 					Kreski_sono.stop()
 					if oktavo == 3:
 						if alto < 1000:
-							C3_spiccato.play()
+							C3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						elif alto >= 4000:
-							G3_spiccato.play()
+							G3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						elif alto >= 1000:
-							E3_spiccato.play()
+							E3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						oktavo = 5
 					elif oktavo == 5:
 						if alto < 1000:
-							C5_spiccato.play()
+							C5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						elif alto >= 4000:
-							G5_spiccato.play()
+							G5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						elif alto >= 1000:
-							E5_spiccato.play()
+							E5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						oktavo = 3
 					var Parto_ = Parto.instance()
 					Parto_.set_global_pos(PreParto.get_global_pos())
@@ -119,3 +120,6 @@ func _on_T200_timeout():
 	for Parto_ in Partoj.get_children():
 		if Parto_.get_layer_mask_bit(0):
 			Parto_.get_linear_velocity().x
+
+func _on_Reen_pressed():
+	get_tree().change_scene("res://Menuo.tscn")

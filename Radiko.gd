@@ -5,6 +5,8 @@ onready var Kamero = get_node("Kamero")
 onready var Fono = get_node("Fono")
 onready var V_rulumilo = get_node("Kanvaso/V_rulumilo")
 onready var vido_Materialo = get_node("Kanvaso/vido_Materialo")
+onready var vido_Alto = get_node("Kanvaso/vido_Alto")
+onready var vido_Rekordo = get_node("Kanvaso/vido_Rekordo")
 onready var Partoj = get_node("Partoj")
 onready var Materialoj = get_node("Materialoj")
 onready var C3_spiccato = get_node("C3_spiccato")
@@ -13,6 +15,8 @@ onready var E3_spiccato = get_node("E3_spiccato")
 onready var E5_spiccato = get_node("E5_spiccato")
 onready var G3_spiccato = get_node("G3_spiccato")
 onready var G5_spiccato = get_node("G5_spiccato")
+onready var B3_spiccato = get_node("B3_spiccato")
+onready var B5_spiccato = get_node("B5_spiccato")
 onready var C3_pizzicato = get_node("C3_pizzicato")
 onready var C5_pizzicato = get_node("C5_pizzicato")
 onready var Kreski_sono  = get_node("Kreski_sono")
@@ -28,18 +32,41 @@ onready var Celo = preload("res://Celo.tscn")
 
 var Celo_ = null
 
-var alto = 0
+var alto setget set_alto
+func set_alto(valoro):
+	if alto == null or valoro > alto:
+		alto = int(valoro/8.45)
+		if T.modo == 0:
+			V_rulumilo.set_value(-valoro+900)
+			vido_Alto.set_text(str(alto)+"m")
+			if alto > T.Agordejo.get_value("Rekordo", "rekordo",0):
+				T.Agordejo.set_value("Rekordo", "rekordo", alto)
+				T.Agordejo.save(T.agordejo)
+				vido_Rekordo.set_text(
+					str(T.Agordejo.get_value("Rekordo", "rekordo",0))+"m"
+				)
 
 var oktavo = 3
 
 var fonkoloroj = ["E53935", "FB8C00", "FDD835",
 					"7CB342", "039BE5", "8E24AA"
 				]
+var koloroj = {"Rugxa":"E53935", "Ambra":"FFB300",
+				"Verda":"43A047", "Blua":"1E88E5",
+				"Viola":"8E24AA", "Nigra":"000000"
+			}
 
 func _ready():
 	T.Radiko = self
 	T.materialo = 100
+	self.alto = 0
 	if T.modo == 0:
+		vido_Rekordo.set_text(
+			str(T.Agordejo.get_value("Rekordo", "rekordo","0"))+"m"
+		)
+		Fono.set_color(
+			koloroj[T.Agordejo.get_value("Koloro", "koloro", "Nigra")]
+		)
 		var Senfinfino = get_node("Senfinfino")
 		Senfinfino.set_global_pos(Vector2(0,-101300))
 		Senfinfino.show()
@@ -57,6 +84,8 @@ func _ready():
 			Materialoj.add_child(Materialo_)
 	else:
 		V_rulumilo.hide()
+		vido_Rekordo.hide()
+		vido_Alto.hide()
 		Kamero.set_offset(Vector2(Kamero.get_offset().x,-600))
 		Fono.set_global_pos(Kamero.get_offset()+Vector2(-300,-500))
 		Fono.set_color(fonkoloroj[T.nivelo%6])
@@ -95,7 +124,9 @@ func _input(evento):
 					if oktavo == 3:
 						if alto < 1000:
 							C3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 4000:
+						elif alto >= 6000:
+							B3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+						elif alto >= 3000:
 							G3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						elif alto >= 1000:
 							E3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
@@ -103,7 +134,9 @@ func _input(evento):
 					elif oktavo == 5:
 						if alto < 1000:
 							C5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 4000:
+						elif alto >= 6000:
+							B5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+						elif alto >= 3000:
 							G5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						elif alto >= 1000:
 							E5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))

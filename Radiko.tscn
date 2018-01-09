@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=26 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Kamero.gd" type="Script" id=2]
@@ -11,21 +11,23 @@
 [ext_resource path="res://Sonoj/spiccato/374435__samulis__viola-section-spiccato-e5-violas-spic-e4-v2-rr2.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Sonoj/spiccato/374437__samulis__viola-section-spiccato-f-3-violas-spic-g2-v2-rr2.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Sonoj/spiccato/374438__samulis__viola-section-spiccato-f-5-violas-spic-g4-v2-rr2.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Sonoj/pizzicato/374383__samulis__viola-section-pizzicato-c3-violaens-pizz-c2-v2-rr2.ogg" type="AudioStream" id=12]
-[ext_resource path="res://Sonoj/pizzicato/374384__samulis__viola-section-pizzicato-c5-violaens-pizz-c4-v2-rr2.ogg" type="AudioStream" id=13]
-[ext_resource path="res://Sonoj/136893__bowmans-last-words__coming-down.ogg" type="AudioStream" id=14]
-[ext_resource path="res://Sonoj/Tabloj/130404__mmiron__ghe-3.ogg" type="AudioStream" id=15]
-[ext_resource path="res://Sonoj/Tabloj/130416__mmiron__tun.ogg" type="AudioStream" id=16]
-[ext_resource path="res://Sonoj/Tabloj/130419__mmiron__tun-2.ogg" type="AudioStream" id=17]
-[ext_resource path="res://Sonoj/Tabloj/130430__mmiron__tas-3.ogg" type="AudioStream" id=18]
-[ext_resource path="res://Sonoj/Tabloj/130428__mmiron__na-sharp.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Sonoj/spiccato/374428__samulis__viola-section-spiccato-b3-violas-spic-b2-v2-rr2.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Sonoj/spiccato/374405__samulis__viola-section-spiccato-b5-violas-spic-b4-v2-rr1.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Sonoj/pizzicato/374383__samulis__viola-section-pizzicato-c3-violaens-pizz-c2-v2-rr2.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Sonoj/pizzicato/374384__samulis__viola-section-pizzicato-c5-violaens-pizz-c4-v2-rr2.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Sonoj/136893__bowmans-last-words__coming-down.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Sonoj/Tabloj/130404__mmiron__ghe-3.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Sonoj/Tabloj/130416__mmiron__tun.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Sonoj/Tabloj/130419__mmiron__tun-2.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Sonoj/Tabloj/130430__mmiron__tas-3.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Sonoj/Tabloj/130428__mmiron__na-sharp.ogg" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1800, 10 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -38,13 +40,26 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = 60.0
 content_margin/bottom = -1.0
 bg_color = Color( 0.117647, 0.533333, 0.898039, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 1, 1, 1, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
@@ -207,8 +222,8 @@ margin/left = 30.0
 margin/top = 70.0
 margin/right = 0.0
 margin/bottom = 0.0
-custom_styles/grabber_hilite = SubResource( 4 )
-custom_styles/grabber = SubResource( 5 )
+custom_styles/grabber_hilite = SubResource( 2 )
+custom_styles/grabber = SubResource( 3 )
 range/min = -2000.0
 range/max = -600.0
 range/step = 0.0
@@ -232,19 +247,62 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="vido_Materialo" type="Label" parent="Kanvaso"]
+[node name="vido_Materialo" type="ProgressBar" parent="Kanvaso"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 20.0
-margin/top = -10.0
-margin/right = 130.0
-margin/bottom = 79.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 450.0
+margin/bottom = 69.0
+custom_styles/fg = SubResource( 4 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "123"
+range/min = 0.0
+range/max = 1000.0
+range/step = 1.0
+range/page = 0.0
+range/value = 100.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = false
+
+[node name="vido_Rekordo" type="Label" parent="Kanvaso"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 320.0
+margin/top = 70.0
+margin/right = 558.0
+margin/bottom = 159.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "12345m"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="vido_Alto" type="Label" parent="Kanvaso"]
+
+rect/scale = Vector2( 0.7, 0.7 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 390.0
+margin/top = 140.0
+margin/right = 628.0
+margin/bottom = 229.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "12345m"
+align = 2
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -258,9 +316,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 440.0
+margin/left = 380.0
 margin/top = 10.0
-margin/right = 550.0
+margin/right = 490.0
 margin/bottom = 99.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
@@ -279,7 +337,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 450.0
 margin/top = 0.0
-margin/right = 590.0
+margin/right = 610.0
 margin/bottom = 140.0
 toggle_mode = false
 enabled_focus_mode = 2
@@ -381,7 +439,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="C3_pizzicato" type="StreamPlayer" parent="."]
+[node name="B3_spiccato" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 12 )
 stream/play = false
@@ -392,7 +450,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="C5_pizzicato" type="StreamPlayer" parent="."]
+[node name="B5_spiccato" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 13 )
 stream/play = false
@@ -403,7 +461,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Kreski_sono" type="StreamPlayer" parent="."]
+[node name="C3_pizzicato" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 14 )
 stream/play = false
@@ -414,7 +472,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo5_sono" type="StreamPlayer" parent="."]
+[node name="C5_pizzicato" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 15 )
 stream/play = false
@@ -425,7 +483,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo4_sono" type="StreamPlayer" parent="."]
+[node name="Kreski_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 16 )
 stream/play = false
@@ -436,7 +494,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo3_sono" type="StreamPlayer" parent="."]
+[node name="Materialo5_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 17 )
 stream/play = false
@@ -447,7 +505,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo2_sono" type="StreamPlayer" parent="."]
+[node name="Materialo4_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 18 )
 stream/play = false
@@ -458,9 +516,31 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo1_sono" type="StreamPlayer" parent="."]
+[node name="Materialo3_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 19 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Materialo2_sono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 20 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Materialo1_sono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 21 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 0.0

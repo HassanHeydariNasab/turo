@@ -27,7 +27,7 @@ func _ready():
 
 func set_materialo(valoro):
 	materialo = int(valoro)
-	Radiko.vido_Materialo.set_text(str(materialo))
+	Radiko.vido_Materialo.set_value(materialo)
 
 func get_layer_bit (korpo, bit):
 	if korpo extends KinematicBody2D or korpo extends Area2D or\

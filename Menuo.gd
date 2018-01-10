@@ -4,10 +4,8 @@ onready var Senfina = get_node("Senfina")
 
 func _init():
 	var lingvo = T.Agordejo.get_value("Lingvo", "lingvo")
-	print(0)
 	if TranslationServer.get_locale() != lingvo:
 		TranslationServer.set_locale(lingvo)
-		print(1)
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)

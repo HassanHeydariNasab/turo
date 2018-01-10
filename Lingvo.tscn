@@ -28,14 +28,14 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 430.0
-margin/right = 550.0
+margin/right = 563.0
 margin/bottom = 580.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
@@ -44,12 +44,13 @@ shortcut = null
 text = "Elektu min!"
 flat = false
 
-[node name="Polygon2D" type="Polygon2D" parent="EO"]
+[node name="Fono" type="Polygon2D" parent="EO"]
 
-transform/pos = Vector2( 299.213, 131.545 )
-polygon = Vector2Array( -80.3334, -0.333374, -80.3334, 79.6666, 106.333, 106.333, 199.667, 79.6666, 222.333, 12.9999, 119.667, -13.6667 )
+transform/pos = Vector2( 309.5, 181.25 )
+transform/scale = Vector2( 0.744141, 0.488282 )
+polygon = Vector2Array( 339.989, -63.9999, 256, 63.9999, -331.926, 63.9999, -415.916, -63.9999 )
 uv = Vector2Array(  )
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
+color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -59,20 +60,22 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Label" type="Label" parent="EO/Polygon2D"]
+[node name="Label" type="Label" parent="EO"]
 
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -20.0
-margin/top = 17.0
-margin/right = 267.0
-margin/bottom = 94.0
+margin/left = 63.0
+margin/top = 150.0
+margin/right = 792.0
+margin/bottom = 254.0
 custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Esperanto"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -86,14 +89,14 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 200.0
-margin/right = 550.0
-margin/bottom = 350.0
+margin/right = 563.0
+margin/bottom = 325.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
@@ -102,12 +105,13 @@ shortcut = null
 text = "Choose me!"
 flat = false
 
-[node name="Polygon2D" type="Polygon2D" parent="EN"]
+[node name="Fono" type="Polygon2D" parent="EN"]
 
-transform/pos = Vector2( 299.213, 131.545 )
-polygon = Vector2Array( 39.6666, -13.6667, -80.3334, -0.333374, -80.3334, 79.6666, 106.333, 106.333, 199.667, 79.6666, 222.333, 12.9999 )
+transform/pos = Vector2( 312.5, 156.25 )
+transform/scale = Vector2( 0.732422, 0.488281 )
+polygon = Vector2Array( 341.333, -64, 256, 64.0001, -341.333, 64.0001, -426.667, -64 )
 uv = Vector2Array(  )
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
+color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -117,20 +121,22 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Label" type="Label" parent="EN/Polygon2D"]
+[node name="Label" type="Label" parent="EN"]
 
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -2.0
-margin/top = 17.0
-margin/right = 285.0
-margin/bottom = 94.0
+margin/left = 63.0
+margin/top = 125.0
+margin/right = 791.0
+margin/bottom = 229.0
 custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "English"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

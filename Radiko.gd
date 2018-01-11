@@ -9,6 +9,7 @@ onready var vido_Alto = get_node("Kanvaso/vido_Alto")
 onready var vido_Rekordo = get_node("Kanvaso/vido_Rekordo")
 onready var Partoj = get_node("Partoj")
 onready var Materialoj = get_node("Materialoj")
+onready var Fonmuziko  = get_node("Fonmuziko")
 onready var C3_spiccato = get_node("C3_spiccato")
 onready var C5_spiccato = get_node("C5_spiccato")
 onready var E3_spiccato = get_node("E3_spiccato")
@@ -34,17 +35,21 @@ var Celo_ = null
 
 var alto setget set_alto
 func set_alto(valoro):
-	if alto == null or valoro > alto:
+	if alto == null or int(valoro/8.45) > alto:
 		alto = int(valoro/8.45)
+		print(alto)
 		if T.modo == 0:
 			V_rulumilo.set_value(-valoro+900)
 			vido_Alto.set_text(str(alto)+"m")
 			if alto > T.Agordejo.get_value("Rekordo", "rekordo",0):
+				Fonmuziko.set_volume_db(5)
 				T.Agordejo.set_value("Rekordo", "rekordo", alto)
 				T.Agordejo.save(T.agordejo)
 				vido_Rekordo.set_text(
 					str(T.Agordejo.get_value("Rekordo", "rekordo",0))+"m"
 				)
+			else:
+				Fonmuziko.set_volume_db(0)
 
 var oktavo = 3
 
@@ -104,6 +109,7 @@ func _ready():
 					i+rand_range(0,100)
 				))
 				Materialoj.add_child(Materialo_)
+	Fonmuziko.set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	set_process_input(true)
 	set_fixed_process(true)
 #	set_process(true)

@@ -2,7 +2,7 @@
 
 ## Muzikoj
 
-https://freesound.org/people/Magntron/sounds/335571/
+https://freesound.org/people/aptbr/sounds/362106/
 
 ## Sonoj
 

@@ -11,6 +11,7 @@ onready var Partoj = get_node("Partoj")
 onready var Materialoj = get_node("Materialoj")
 onready var Fonmuziko  = get_node("Fonmuziko")
 onready var T500 = get_node("T500")
+onready var T30000 = get_node("T30000")
 onready var C3_spiccato = get_node("C3_spiccato")
 onready var C5_spiccato = get_node("C5_spiccato")
 onready var E3_spiccato = get_node("E3_spiccato")
@@ -25,6 +26,7 @@ onready var E3_tremolo = get_node("E3_tremolo")
 onready var G3_tremolo = get_node("G3_tremolo")
 onready var E3_timpani = get_node("E3_timpani")
 onready var C3_chimes = get_node("C3_chimes")
+onready var C4_chimes = get_node("C4_chimes")
 onready var Kreski_sono  = get_node("Kreski_sono")
 onready var Materialo1_sono  = get_node("Materialo1_sono")
 onready var Materialo2_sono  = get_node("Materialo2_sono")
@@ -198,32 +200,48 @@ var sumo_rapido_y = 0
 var rapido = 0
 var averagxa_rapido_x = 0
 var averagxa_rapido_y = 0
+var partoj = 1
+var diferenco = 0
 func _on_T500_timeout():
 	sumo_rapido_x = 0
 	sumo_rapido_y = 0
+	partoj = 1
 	for Parto_ in Partoj.get_children():
 		if Parto_.get_layer_mask_bit(0):
 			rapido = Parto_.get_linear_velocity()
 			sumo_rapido_x += abs(rapido.x)
 			sumo_rapido_y += abs(rapido.y)
-	averagxa_rapido_x = sumo_rapido_x / (Partoj.get_child_count()+1)
-	averagxa_rapido_y = sumo_rapido_y / (Partoj.get_child_count()+1)
-	if (averagxa_rapido_x - averagxa_rapido_y) > 2.5:
+			partoj += 1
+	averagxa_rapido_x = sumo_rapido_x / partoj
+	averagxa_rapido_y = sumo_rapido_y / partoj
+	diferenco = averagxa_rapido_x - averagxa_rapido_y
+	print(str(diferenco))
+	if diferenco > 2:
 		if not E3_timpani.is_playing():
 			E3_timpani.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-		if averagxa_rapido_x > 4.5:
+		if averagxa_rapido_x > 6:
 			E3_tremolo.set_volume_db(-15)
 			G3_tremolo.set_volume_db(-3)
 			if not G3_tremolo.is_playing():
 				G3_tremolo.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-		elif averagxa_rapido_x > 2.5:
+		elif averagxa_rapido_x > 2:
 			E3_tremolo.set_volume_db(-3)
 			G3_tremolo.set_volume_db(-15)
 			if not E3_tremolo.is_playing():
 				E3_tremolo.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-	elif (averagxa_rapido_x - averagxa_rapido_y) < -50:
-		C3_chimes.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-		T500.stop()
+	elif partoj >= 20:
+		if diferenco < -50:
+			C3_chimes.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+			T30000.start()
+			T500.stop()
+	elif partoj < 20:
+		if diferenco < -25:
+			C4_chimes.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+			T30000.start()
+			T500.stop()
 
 func _on_Reen_pressed():
 	get_tree().change_scene("res://Menuo.tscn")
+
+func _on_T30000_timeout():
+	T500.start()

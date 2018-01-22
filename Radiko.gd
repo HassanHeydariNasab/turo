@@ -10,6 +10,7 @@ onready var vido_Rekordo = get_node("Kanvaso/vido_Rekordo")
 onready var Partoj = get_node("Partoj")
 onready var Materialoj = get_node("Materialoj")
 onready var Fonmuziko  = get_node("Fonmuziko")
+onready var T500 = get_node("T500")
 onready var C3_spiccato = get_node("C3_spiccato")
 onready var C5_spiccato = get_node("C5_spiccato")
 onready var E3_spiccato = get_node("E3_spiccato")
@@ -20,6 +21,10 @@ onready var B3_spiccato = get_node("B3_spiccato")
 onready var B5_spiccato = get_node("B5_spiccato")
 onready var C3_pizzicato = get_node("C3_pizzicato")
 onready var C5_pizzicato = get_node("C5_pizzicato")
+onready var E3_tremolo = get_node("E3_tremolo")
+onready var G3_tremolo = get_node("G3_tremolo")
+onready var E3_timpani = get_node("E3_timpani")
+onready var C3_chimes = get_node("C3_chimes")
 onready var Kreski_sono  = get_node("Kreski_sono")
 onready var Materialo1_sono  = get_node("Materialo1_sono")
 onready var Materialo2_sono  = get_node("Materialo2_sono")
@@ -37,12 +42,11 @@ var alto setget set_alto
 func set_alto(valoro):
 	if alto == null or int(valoro/8.45) > alto:
 		alto = int(valoro/8.45)
-		print(alto)
 		if T.modo == 0:
 			V_rulumilo.set_value(-valoro+900)
 			vido_Alto.set_text(str(alto)+"m")
 			if alto > T.Agordejo.get_value("Rekordo", "rekordo",0):
-				Fonmuziko.set_volume_db(5)
+				Fonmuziko.set_volume_db(10)
 				T.Agordejo.set_value("Rekordo", "rekordo", alto)
 				T.Agordejo.save(T.agordejo)
 				vido_Rekordo.set_text(
@@ -189,10 +193,37 @@ func _on_V_rulumilo_value_changed( valoro ):
 func _on_Rekomencu_pressed():
 	get_tree().reload_current_scene()
 
-func _on_T200_timeout():
+var sumo_rapido_x = 0
+var sumo_rapido_y = 0
+var rapido = 0
+var averagxa_rapido_x = 0
+var averagxa_rapido_y = 0
+func _on_T500_timeout():
+	sumo_rapido_x = 0
+	sumo_rapido_y = 0
 	for Parto_ in Partoj.get_children():
 		if Parto_.get_layer_mask_bit(0):
-			Parto_.get_linear_velocity().x
+			rapido = Parto_.get_linear_velocity()
+			sumo_rapido_x += abs(rapido.x)
+			sumo_rapido_y += abs(rapido.y)
+	averagxa_rapido_x = sumo_rapido_x / (Partoj.get_child_count()+1)
+	averagxa_rapido_y = sumo_rapido_y / (Partoj.get_child_count()+1)
+	if (averagxa_rapido_x - averagxa_rapido_y) > 2.5:
+		if not E3_timpani.is_playing():
+			E3_timpani.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+		if averagxa_rapido_x > 4.5:
+			E3_tremolo.set_volume_db(-15)
+			G3_tremolo.set_volume_db(-3)
+			if not G3_tremolo.is_playing():
+				G3_tremolo.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+		elif averagxa_rapido_x > 2.5:
+			E3_tremolo.set_volume_db(-3)
+			G3_tremolo.set_volume_db(-15)
+			if not E3_tremolo.is_playing():
+				E3_tremolo.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+	elif (averagxa_rapido_x - averagxa_rapido_y) < -50:
+		C3_chimes.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+		T500.stop()
 
 func _on_Reen_pressed():
 	get_tree().change_scene("res://Menuo.tscn")

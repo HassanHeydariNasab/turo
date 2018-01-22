@@ -255,15 +255,16 @@ script/script = ExtResource( 1 )
 
 [node name="Normala" type="Button" parent="."]
 
+visibility/visible = false
 rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
-margin/top = 120.0
+margin/top = 360.0
 margin/right = 660.0
-margin/bottom = 245.0
+margin/bottom = 485.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -285,9 +286,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
-margin/top = 260.0
+margin/top = 120.0
 margin/right = 660.0
-margin/bottom = 385.0
+margin/bottom = 245.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -298,7 +299,7 @@ custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Senfina"
+text = "Ludu"
 flat = false
 
 [node name="Rugxa" type="Button" parent="."]
@@ -308,9 +309,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 140.0
-margin/top = 380.0
+margin/top = 240.0
 margin/right = 220.0
-margin/bottom = 459.0
+margin/bottom = 319.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
@@ -330,9 +331,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 220.0
-margin/top = 380.0
+margin/top = 240.0
 margin/right = 300.0
-margin/bottom = 459.0
+margin/bottom = 319.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
@@ -352,9 +353,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 300.0
-margin/top = 380.0
+margin/top = 240.0
 margin/right = 380.0
-margin/bottom = 459.0
+margin/bottom = 319.0
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
@@ -374,9 +375,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 380.0
-margin/top = 380.0
+margin/top = 240.0
 margin/right = 460.0
-margin/bottom = 459.0
+margin/bottom = 319.0
 custom_styles/hover = SubResource( 10 )
 custom_styles/pressed = SubResource( 11 )
 custom_styles/normal = SubResource( 12 )
@@ -396,9 +397,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 460.0
-margin/top = 380.0
+margin/top = 240.0
 margin/right = 540.0
-margin/bottom = 459.0
+margin/bottom = 319.0
 custom_styles/hover = SubResource( 13 )
 custom_styles/pressed = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
@@ -418,9 +419,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
-margin/top = 380.0
+margin/top = 240.0
 margin/right = 140.0
-margin/bottom = 459.0
+margin/bottom = 319.0
 custom_styles/hover = SubResource( 16 )
 custom_styles/pressed = SubResource( 17 )
 custom_styles/normal = SubResource( 18 )
@@ -544,17 +545,17 @@ stream/buffering_ms = 500
 
 [connection signal="pressed" from="Senfina" to="." method="_on_Senfina_pressed"]
 
-[connection signal="toggled" from="Rugxa" to="." method="_on_Rugxa_toggled"]
+[connection signal="pressed" from="Rugxa" to="." method="_on_Rugxa_pressed"]
 
-[connection signal="toggled" from="Ambra" to="." method="_on_Ambra_toggled"]
+[connection signal="pressed" from="Ambra" to="." method="_on_Ambra_pressed"]
 
-[connection signal="toggled" from="Verda" to="." method="_on_Verda_toggled"]
+[connection signal="pressed" from="Verda" to="." method="_on_Verda_pressed"]
 
-[connection signal="toggled" from="Blua" to="." method="_on_Blua_toggled"]
+[connection signal="pressed" from="Blua" to="." method="_on_Blua_pressed"]
 
-[connection signal="toggled" from="Viola" to="." method="_on_Viola_toggled"]
+[connection signal="pressed" from="Viola" to="." method="_on_Viola_pressed"]
 
-[connection signal="toggled" from="Nigra" to="." method="_on_Nigra_toggled"]
+[connection signal="pressed" from="Nigra" to="." method="_on_Nigra_pressed"]
 
 [connection signal="pressed" from="Lingvo" to="." method="_on_Lingvo_pressed"]
 

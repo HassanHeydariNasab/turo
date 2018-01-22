@@ -1,6 +1,12 @@
 extends Control
 
 onready var Senfina = get_node("Senfina")
+onready var Rugxa = get_node("Rugxa")
+onready var Ambra = get_node("Ambra")
+onready var Verda = get_node("Verda")
+onready var Blua = get_node("Blua")
+onready var Viola = get_node("Viola")
+onready var Nigra = get_node("Nigra")
 
 func _init():
 	var lingvo = T.Agordejo.get_value("Lingvo", "lingvo")
@@ -32,44 +38,62 @@ func _on_Pri_pressed():
 func _on_Eliri_pressed():
 	get_tree().quit()
 
-func _on_Rugxa_toggled( b ):
+func _on_Rugxa_pressed():
 	T.Agordejo.set_value("Koloro", "koloro", "Rugxa")
 	T.Agordejo.save(T.agordejo)
-	for Koloro in Senfina.get_children():
-		Koloro.set_pressed(false)
-	get_node("Rugxa").set_pressed(true)
+	Rugxa.set_pressed(true)
+	Ambra.set_pressed(false)
+	Verda.set_pressed(false)
+	Blua.set_pressed(false)
+	Viola.set_pressed(false)
+	Nigra.set_pressed(false)
 
-func _on_Ambra_toggled( b ):
+func _on_Ambra_pressed():
 	T.Agordejo.set_value("Koloro", "koloro", "Ambra")
 	T.Agordejo.save(T.agordejo)
-	for Koloro in Senfina.get_children():
-		Koloro.set_pressed(false)
-	get_node("Ambra").set_pressed(true)
+	Rugxa.set_pressed(false)
+	Ambra.set_pressed(true)
+	Verda.set_pressed(false)
+	Blua.set_pressed(false)
+	Viola.set_pressed(false)
+	Nigra.set_pressed(false)
 
-func _on_Verda_toggled( b ):
+func _on_Verda_pressed():
 	T.Agordejo.set_value("Koloro", "koloro", "Verda")
 	T.Agordejo.save(T.agordejo)
-	for Koloro in Senfina.get_children():
-		Koloro.set_pressed(false)
-	get_node("Verda").set_pressed(true)
+	Rugxa.set_pressed(false)
+	Ambra.set_pressed(false)
+	Verda.set_pressed(true)
+	Blua.set_pressed(false)
+	Viola.set_pressed(false)
+	Nigra.set_pressed(false)
 
-func _on_Blua_toggled( b ):
+func _on_Blua_pressed():
 	T.Agordejo.set_value("Koloro", "koloro", "Blua")
 	T.Agordejo.save(T.agordejo)
-	for Koloro in Senfina.get_children():
-		Koloro.set_pressed(false)
-	get_node("Blua").set_pressed(true)
+	Rugxa.set_pressed(false)
+	Ambra.set_pressed(false)
+	Verda.set_pressed(false)
+	Blua.set_pressed(true)
+	Viola.set_pressed(false)
+	Nigra.set_pressed(false)
 
-func _on_Viola_toggled( b ):
+func _on_Viola_pressed():
 	T.Agordejo.set_value("Koloro", "koloro", "Viola")
 	T.Agordejo.save(T.agordejo)
-	for Koloro in Senfina.get_children():
-		Koloro.set_pressed(false)
-	get_node("Viola").set_pressed(true)
+	Rugxa.set_pressed(false)
+	Ambra.set_pressed(false)
+	Verda.set_pressed(false)
+	Blua.set_pressed(false)
+	Viola.set_pressed(true)
+	Nigra.set_pressed(false)
 
-func _on_Nigra_toggled( b ):
+func _on_Nigra_pressed():
 	T.Agordejo.set_value("Koloro", "koloro", "Nigra")
 	T.Agordejo.save(T.agordejo)
-	for Koloro in Senfina.get_children():
-		Koloro.set_pressed(false)
-	get_node("Nigra").set_pressed(true)
+	Rugxa.set_pressed(false)
+	Ambra.set_pressed(false)
+	Verda.set_pressed(false)
+	Blua.set_pressed(false)
+	Viola.set_pressed(false)
+	Nigra.set_pressed(true)

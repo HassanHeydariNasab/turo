@@ -48,7 +48,7 @@ func set_alto(valoro):
 			V_rulumilo.set_value(-valoro+900)
 			vido_Alto.set_text(str(alto)+"m")
 			if alto > T.Agordejo.get_value("Rekordo", "rekordo",0):
-				Fonmuziko.set_volume_db(10)
+				Fonmuziko.set_volume_db(5)
 				T.Agordejo.set_value("Rekordo", "rekordo", alto)
 				T.Agordejo.save(T.agordejo)
 				vido_Rekordo.set_text(
@@ -134,23 +134,23 @@ func _input(evento):
 					PreParto.hide()
 					Kreski_sono.stop()
 					if oktavo == 3:
-						if alto < 1000:
+						if alto < 700:
 							C3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 6000:
+						elif alto >= 2000:
 							B3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 3000:
+						elif alto >= 1200:
 							G3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 1000:
+						elif alto >= 700:
 							E3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						oktavo = 5
 					elif oktavo == 5:
-						if alto < 1000:
+						if alto < 700:
 							C5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 6000:
+						elif alto >= 2000:
 							B5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 3000:
+						elif alto >= 1500:
 							G5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 1000:
+						elif alto >= 700:
 							E5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						oktavo = 3
 					var Parto_ = Parto.instance()
@@ -215,7 +215,6 @@ func _on_T500_timeout():
 	averagxa_rapido_x = sumo_rapido_x / partoj
 	averagxa_rapido_y = sumo_rapido_y / partoj
 	diferenco = averagxa_rapido_x - averagxa_rapido_y
-	print(str(diferenco))
 	if diferenco > 2:
 		if not E3_timpani.is_playing():
 			E3_timpani.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))

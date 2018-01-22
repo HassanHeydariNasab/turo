@@ -147,9 +147,9 @@ func _input(evento):
 					if oktavo == 3:
 						if alto < 700:
 							C3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 2000:
+						elif alto > 2000:
 							B3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 1200:
+						elif alto > 1200:
 							G3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						elif alto >= 700:
 							E3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
@@ -157,9 +157,9 @@ func _input(evento):
 					elif oktavo == 5:
 						if alto < 700:
 							C5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 2000:
+						elif alto > 2000:
 							B5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 1500:
+						elif alto > 1200:
 							G5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						elif alto >= 700:
 							E5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))

@@ -293,12 +293,23 @@ margin/right = 558.0
 margin/bottom = 159.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 1
 text = "12345m"
 align = 2
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Brili" type="Tween" parent="Kanvaso/vido_Rekordo"]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = true
+playback/speed = 1.0
 
 [node name="vido_Alto" type="Label" parent="Kanvaso"]
 
@@ -313,6 +324,10 @@ margin/right = 628.0
 margin/bottom = 229.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 1
 text = "12345m"
 align = 2
 valign = 1
@@ -621,6 +636,8 @@ stream/buffering_ms = 500
 [connection signal="timeout" from="T30000" to="." method="_on_T30000_timeout"]
 
 [connection signal="value_changed" from="Kanvaso/V_rulumilo" to="." method="_on_V_rulumilo_value_changed"]
+
+[connection signal="tween_step" from="Kanvaso/vido_Rekordo/Brili" to="." method="_on_Brili_tween_step"]
 
 [connection signal="pressed" from="Kanvaso/Rekomencu" to="." method="_on_Rekomencu_pressed"]
 

@@ -7,6 +7,7 @@ onready var V_rulumilo = get_node("Kanvaso/V_rulumilo")
 onready var vido_Materialo = get_node("Kanvaso/vido_Materialo")
 onready var vido_Alto = get_node("Kanvaso/vido_Alto")
 onready var vido_Rekordo = get_node("Kanvaso/vido_Rekordo")
+onready var vido_Rekordo_Brili = get_node("Kanvaso/vido_Rekordo/Brili")
 onready var Partoj = get_node("Partoj")
 onready var Materialoj = get_node("Materialoj")
 onready var Fonmuziko  = get_node("Fonmuziko")
@@ -54,6 +55,8 @@ func set_alto(valoro):
 				vido_Rekordo.set_text(
 					str(T.Agordejo.get_value("Rekordo", "rekordo",0))+"m"
 				)
+				vido_Rekordo_Brili.seek(0)
+				vido_Rekordo_Brili.resume_all()
 			else:
 				Fonmuziko.set_volume_db(0)
 
@@ -116,6 +119,14 @@ func _ready():
 				))
 				Materialoj.add_child(Materialo_)
 	Fonmuziko.set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
+	vido_Rekordo_Brili.interpolate_property(vido_Rekordo,
+		"custom_colors/font_color", Color("ffffff"), Color("D500F9"), 0.25,
+		Tween.TRANS_SINE, Tween.EASE_OUT
+	)
+	vido_Rekordo_Brili.interpolate_property(vido_Rekordo,
+		"custom_colors/font_color", Color("D500F9"), Color("ffffff"), 0.25,
+		Tween.TRANS_SINE, Tween.EASE_OUT, 0.25
+	)
 	set_process_input(true)
 	set_fixed_process(true)
 #	set_process(true)
@@ -244,3 +255,7 @@ func _on_Reen_pressed():
 
 func _on_T30000_timeout():
 	T500.start()
+
+func _on_Brili_tween_step( object, key, elapsed, value ):
+	if elapsed == 0.5:
+		vido_Rekordo_Brili.stop_all()

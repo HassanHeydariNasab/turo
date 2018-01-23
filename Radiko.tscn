@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=1]
+[gd_scene load_steps=33 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Kamero.gd" type="Script" id=2]
@@ -21,12 +21,13 @@
 [ext_resource path="res://Sonoj/timpani/373946__samulis__timpani-rolls-e3-timpani4-roll-v5-rr1-sum.ogg" type="AudioStream" id=19]
 [ext_resource path="res://Sonoj/chimes/192634__samulis__chimes-c3-pp-1.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Sonoj/chimes/192633__samulis__chimes-c4-p-1.ogg" type="AudioStream" id=21]
-[ext_resource path="res://Sonoj/136893__bowmans-last-words__coming-down.ogg" type="AudioStream" id=22]
-[ext_resource path="res://Sonoj/Tabloj/130404__mmiron__ghe-3.ogg" type="AudioStream" id=23]
-[ext_resource path="res://Sonoj/Tabloj/130416__mmiron__tun.ogg" type="AudioStream" id=24]
-[ext_resource path="res://Sonoj/Tabloj/130419__mmiron__tun-2.ogg" type="AudioStream" id=25]
-[ext_resource path="res://Sonoj/Tabloj/130430__mmiron__tas-3.ogg" type="AudioStream" id=26]
-[ext_resource path="res://Sonoj/Tabloj/130428__mmiron__na-sharp.ogg" type="AudioStream" id=27]
+[ext_resource path="res://Sonoj/crashes/209874__veiler__pff-chrash-14.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Sonoj/136893__bowmans-last-words__coming-down.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Sonoj/Tabloj/130404__mmiron__ghe-3.ogg" type="AudioStream" id=24]
+[ext_resource path="res://Sonoj/Tabloj/130416__mmiron__tun.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Sonoj/Tabloj/130419__mmiron__tun-2.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Sonoj/Tabloj/130430__mmiron__tas-3.ogg" type="AudioStream" id=27]
+[ext_resource path="res://Sonoj/Tabloj/130428__mmiron__na-sharp.ogg" type="AudioStream" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -120,6 +121,8 @@ script/script = ExtResource( 2 )
 
 [node name="Materialoj" type="Node2D" parent="."]
 
+[node name="Rektanguloj" type="Node2D" parent="."]
+
 [node name="PreParto" type="Area2D" parent="."]
 
 editor/display_folded = true
@@ -146,6 +149,7 @@ invert/border = 100.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -1000 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -565,18 +569,18 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Kreski_sono" type="StreamPlayer" parent="."]
+[node name="Crash_14" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 22 )
 stream/play = false
 stream/loop = false
-stream/volume_db = 0.0
+stream/volume_db = 5.0
 stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo5_sono" type="StreamPlayer" parent="."]
+[node name="Kreski_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 23 )
 stream/play = false
@@ -587,7 +591,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo4_sono" type="StreamPlayer" parent="."]
+[node name="Materialo5_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 24 )
 stream/play = false
@@ -598,7 +602,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo3_sono" type="StreamPlayer" parent="."]
+[node name="Materialo4_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 25 )
 stream/play = false
@@ -609,7 +613,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo2_sono" type="StreamPlayer" parent="."]
+[node name="Materialo3_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 26 )
 stream/play = false
@@ -620,9 +624,20 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Materialo1_sono" type="StreamPlayer" parent="."]
+[node name="Materialo2_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 27 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Materialo1_sono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 28 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 0.0

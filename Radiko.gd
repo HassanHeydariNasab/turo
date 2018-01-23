@@ -10,6 +10,7 @@ onready var vido_Rekordo = get_node("Kanvaso/vido_Rekordo")
 onready var vido_Rekordo_Brili = get_node("Kanvaso/vido_Rekordo/Brili")
 onready var Partoj = get_node("Partoj")
 onready var Materialoj = get_node("Materialoj")
+onready var Rektanguloj = get_node("Rektanguloj")
 onready var Fonmuziko  = get_node("Fonmuziko")
 onready var T500 = get_node("T500")
 onready var T30000 = get_node("T30000")
@@ -28,6 +29,7 @@ onready var G3_tremolo = get_node("G3_tremolo")
 onready var E3_timpani = get_node("E3_timpani")
 onready var C3_chimes = get_node("C3_chimes")
 onready var C4_chimes = get_node("C4_chimes")
+onready var Crash_14 = get_node("Crash_14")
 onready var Kreski_sono  = get_node("Kreski_sono")
 onready var Materialo1_sono  = get_node("Materialo1_sono")
 onready var Materialo2_sono  = get_node("Materialo2_sono")
@@ -38,6 +40,7 @@ onready var Materialo5_sono  = get_node("Materialo5_sono")
 onready var Parto = preload("res://Parto.tscn")
 onready var Materialo = preload("res://Materialo.tscn")
 onready var Celo = preload("res://Celo.tscn")
+onready var Rektangulo = preload("res://Rektangulo.tscn")
 
 var Celo_ = null
 
@@ -70,6 +73,8 @@ var koloroj = {"Rugxa":"E53935", "Ambra":"FFB300",
 				"Viola":"8E24AA", "Nigra":"000000"
 			}
 
+var rektangulo = false
+
 func _ready():
 	T.Radiko = self
 	T.materialo = 100
@@ -96,6 +101,14 @@ func _ready():
 				i
 			))
 			Materialoj.add_child(Materialo_)
+		for i in range(-101000, 0, 1000):
+			randomize()
+			var Rektangulo_ = Rektangulo.instance()
+			Rektangulo_.set_global_pos(
+				Vector2(rand_range(100,500),
+				i
+			))
+			Rektanguloj.add_child(Rektangulo_)
 	else:
 		V_rulumilo.hide()
 		vido_Rekordo.hide()
@@ -144,6 +157,8 @@ func _input(evento):
 				elif PreParto.is_visible():
 					PreParto.hide()
 					Kreski_sono.stop()
+					if rektangulo:
+						rektangulo = false
 					if oktavo == 3:
 						if alto < 700:
 							C3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
@@ -187,7 +202,10 @@ func _fixed_process(delta):
 		var faktoro = PreParto.get_scale().x
 		faktoro += 1/faktoro
 #		PreParto.set_scale(PreParto.get_scale()+Vector2(0.1,0.1))
-		PreParto.set_scale(Vector2(faktoro,faktoro))
+		if rektangulo:
+			PreParto.set_scale(Vector2(faktoro,faktoro*1.618))
+		else:
+			PreParto.set_scale(Vector2(faktoro,faktoro))
 		T.materialo -= 1
 	elif T.materialo <= 0:
 		Kreski_sono.stop()

@@ -50,9 +50,9 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[connection signal="area_enter" from="." to="." method="_on_Materialo_area_enter"]
+[connection signal="area_enter" from="." to="." method="_on_Rektangulo_area_enter"]
 
-[connection signal="body_enter" from="." to="." method="_on_Materialo_body_enter"]
+[connection signal="body_enter" from="." to="." method="_on_Rektangulo_body_enter"]
 
 [connection signal="tween_complete" from="Kasxi" to="." method="_on_Kasxi_tween_complete"]
 

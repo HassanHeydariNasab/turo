@@ -24,7 +24,6 @@ script/script = ExtResource( 1 )
 
 [node name="Aspekto" type="Polygon2D" parent="."]
 
-transform/rot = 15.0
 polygon = Vector2Array( 10, -17, -10, -17, -10, 17, 10, 17 )
 uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )

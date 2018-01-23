@@ -66,7 +66,6 @@ func set_alto(valoro):
 var materialo setget set_materialo
 func set_materialo(valoro):
 	materialo = int(valoro)
-	print(valoro)
 	vido_Materialo.set_value(materialo)
 
 var oktavo = 3
@@ -107,7 +106,7 @@ func _ready():
 				i
 			))
 			Materialoj.add_child(Materialo_)
-		for i in range(-101000, 0, 1000):
+		for i in range(-101000, -500, 700):
 			randomize()
 			var Rektangulo_ = Rektangulo.instance()
 			Rektangulo_.set_global_pos(

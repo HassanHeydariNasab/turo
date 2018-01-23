@@ -3,7 +3,11 @@ extends Area2D
 onready var Kasxi = get_node("Kasxi")
 
 func _ready():
-	pass
+	randomize()
+	if int(rand_range(0,2)) == 0:
+		set_rotd(15)
+	else:
+		set_rotd(-15)
 
 func _on_Rektangulo_body_enter( korpo ):
 	clear_shapes()

@@ -32,7 +32,7 @@ func _on_Materialo_body_enter( korpo ):
 
 func _on_Kasxi_tween_complete( objekto, klavo ):
 	if klavo == "color":
-		T.materialo += materialo
+		T.Radiko.materialo += self.materialo
 	else:
 		queue_free()
 

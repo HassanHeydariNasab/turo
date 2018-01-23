@@ -63,6 +63,12 @@ func set_alto(valoro):
 			else:
 				Fonmuziko.set_volume_db(0)
 
+var materialo setget set_materialo
+func set_materialo(valoro):
+	materialo = int(valoro)
+	print(valoro)
+	vido_Materialo.set_value(materialo)
+
 var oktavo = 3
 
 var fonkoloroj = ["E53935", "FB8C00", "FDD835",
@@ -77,7 +83,7 @@ var rektangulo = false
 
 func _ready():
 	T.Radiko = self
-	T.materialo = 100
+	self.materialo = 100
 	self.alto = 0
 	if T.modo == 0:
 		vido_Rekordo.set_text(
@@ -93,11 +99,11 @@ func _ready():
 		for i in range(-101000, 0, 250):
 			randomize()
 			var Materialo_ = Materialo.instance()
-			var materialo = int(rand_range(50,200))
-			Materialo_.materialo = materialo/2.5
-			Materialo_.set_scale(Vector2(materialo/50, materialo/50))
+			var materialo_ = int(rand_range(50,200))
+			Materialo_.materialo = materialo_/2.5
+			Materialo_.set_scale(Vector2(materialo_/50, materialo_/50))
 			Materialo_.set_global_pos(
-				Vector2(rand_range(300-materialo,300+materialo),
+				Vector2(rand_range(300-materialo_,300+materialo_),
 				i
 			))
 			Materialoj.add_child(Materialo_)
@@ -123,11 +129,11 @@ func _ready():
 			for j in range(2):
 				randomize()
 				var Materialo_ = Materialo.instance()
-				var materialo = int(rand_range(50,100))
-				Materialo_.materialo = materialo/2.5
-				Materialo_.set_scale(Vector2(materialo/50, materialo/50))
+				var materialo_ = int(rand_range(50,100))
+				Materialo_.materialo = materialo_/2.5
+				Materialo_.set_scale(Vector2(materialo_/50, materialo_/50))
 				Materialo_.set_global_pos(
-					Vector2(rand_range(300-materialo,300+materialo),
+					Vector2(rand_range(300-materialo_,300+materialo_),
 					i+rand_range(0,100)
 				))
 				Materialoj.add_child(Materialo_)
@@ -148,7 +154,7 @@ func _input(evento):
 	if evento.type == InputEvent.MOUSE_BUTTON:
 		if evento.button_index == BUTTON_LEFT:
 			if evento.pos.y > 70 and (T.modo == 1 or evento.pos.x < 570):
-				if evento.is_pressed() and T.materialo > 0:
+				if evento.is_pressed() and materialo > 0:
 					PreParto.set_scale(Vector2(1,1))
 					PreParto.set_global_pos(get_global_mouse_pos())
 					PreParto.show()
@@ -198,7 +204,7 @@ func _input(evento):
 			PreParto.set_global_pos(get_global_mouse_pos())
 
 func _fixed_process(delta):
-	if PreParto.is_visible() and T.materialo > 0:
+	if PreParto.is_visible() and self.materialo > 0:
 		var faktoro = PreParto.get_scale().x
 		faktoro += 1/faktoro
 #		PreParto.set_scale(PreParto.get_scale()+Vector2(0.1,0.1))
@@ -206,8 +212,8 @@ func _fixed_process(delta):
 			PreParto.set_scale(Vector2(faktoro,faktoro*1.618))
 		else:
 			PreParto.set_scale(Vector2(faktoro,faktoro))
-		T.materialo -= 1
-	elif T.materialo <= 0:
+		self.materialo -= 1
+	elif self.materialo <= 0:
 		Kreski_sono.stop()
 
 #func _process(delta):

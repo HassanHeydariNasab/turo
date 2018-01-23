@@ -11,8 +11,6 @@ var Radiko = null
 var modo = 0
 var nivelo = 0
 
-var materialo setget set_materialo
-
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		if get_tree().get_current_scene().get_name() == "Menuo":
@@ -24,10 +22,6 @@ func _notification(what):
 
 func _ready():
 	Agordejo.load(agordejo)
-
-func set_materialo(valoro):
-	materialo = int(valoro)
-	Radiko.vido_Materialo.set_value(materialo)
 
 func get_layer_bit (korpo, bit):
 	if korpo extends KinematicBody2D or korpo extends Area2D or\

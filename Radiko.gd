@@ -95,6 +95,14 @@ func _ready():
 		Senfinfino.set_global_pos(Vector2(0,-101300))
 		Senfinfino.show()
 		V_rulumilo.set_min(-101000)
+		for i in range(-101000, -500, 700):
+			randomize()
+			var Rektangulo_ = Rektangulo.instance()
+			Rektangulo_.set_global_pos(
+				Vector2(rand_range(100,500),
+				i
+			))
+			Rektanguloj.add_child(Rektangulo_)
 		for i in range(-101000, 0, 250):
 			randomize()
 			var Materialo_ = Materialo.instance()
@@ -106,14 +114,6 @@ func _ready():
 				i
 			))
 			Materialoj.add_child(Materialo_)
-		for i in range(-101000, -500, 700):
-			randomize()
-			var Rektangulo_ = Rektangulo.instance()
-			Rektangulo_.set_global_pos(
-				Vector2(rand_range(100,500),
-				i
-			))
-			Rektanguloj.add_child(Rektangulo_)
 	else:
 		V_rulumilo.hide()
 		vido_Rekordo.hide()

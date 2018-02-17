@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=1]
+[gd_scene load_steps=31 format=1]
 
 [ext_resource path="res://Menuo.gd" type="Script" id=1]
 [ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=2]
@@ -7,78 +7,78 @@
 [ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=5]
 [ext_resource path="res://Sonoj/Tabloj/130428__mmiron__na-sharp.ogg" type="AudioStream" id=6]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=13]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.898039, 0.223529, 0.207843, 1 )
+bg_color = Color( 0.556863, 0.141176, 0.666667, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=14]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 1, 0.321569, 0.321569, 1 )
+bg_color = Color( 0.556863, 0.141176, 0.666667, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 10
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=15]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.556863, 0.141176, 0.666667, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=26]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.898039, 0.223529, 0.207843, 1 )
+bg_color = Color( 0.117647, 0.533333, 0.898039, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=27]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 1, 0.701961, 0, 1 )
+bg_color = Color( 0.117647, 0.533333, 0.898039, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
-border_size = 0
+border_size = 10
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=28]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 1, 0.843137, 0.25098, 1 )
-light_color = Color( 0.8, 0.8, 0.8, 1 )
-dark_color = Color( 0.8, 0.8, 0.8, 1 )
-border_size = 0
-border_blend = true
-draw_bg = true
-
-[sub_resource type="StyleBoxFlat" id=6]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-bg_color = Color( 1, 0.560784, 0, 1 )
+bg_color = Color( 0.117647, 0.533333, 0.898039, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
@@ -104,10 +104,10 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0, 0.901961, 0.462745, 1 )
+bg_color = Color( 0.262745, 0.627451, 0.278431, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
-border_size = 0
+border_size = 10
 border_blend = true
 draw_bg = true
 
@@ -124,98 +124,85 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.117647, 0.533333, 0.898039, 1 )
+bg_color = Color( 1, 0.568627, 0, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=5]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0, 0.690196, 1, 1 )
+bg_color = Color( 1, 0.568627, 0, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 10
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=6]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 1, 0.568627, 0, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=1]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.117647, 0.533333, 0.898039, 1 )
+bg_color = Color( 0.898039, 0.223529, 0.207843, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=2]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.556863, 0.141176, 0.666667, 1 )
+bg_color = Color( 0.898039, 0.223529, 0.207843, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 10
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.898039, 0.223529, 0.207843, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=14]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-bg_color = Color( 0.835294, 0, 0.976471, 1 )
-light_color = Color( 0.8, 0.8, 0.8, 1 )
-dark_color = Color( 0.8, 0.8, 0.8, 1 )
-border_size = 0
-border_blend = true
-draw_bg = true
-
-[sub_resource type="StyleBoxFlat" id=15]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-bg_color = Color( 0.556863, 0.141176, 0.666667, 1 )
-light_color = Color( 0.8, 0.8, 0.8, 1 )
-dark_color = Color( 0.8, 0.8, 0.8, 1 )
-border_size = 0
-border_blend = true
-draw_bg = true
-
-[sub_resource type="StyleBoxFlat" id=16]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-bg_color = Color( 0.258824, 0.258824, 0.258824, 1 )
-light_color = Color( 0.8, 0.8, 0.8, 1 )
-dark_color = Color( 0.8, 0.8, 0.8, 1 )
-border_size = 0
-border_blend = true
-draw_bg = true
-
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=23]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -228,13 +215,104 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
+[sub_resource type="StyleBoxFlat" id=24]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.380392, 0.380392, 0.380392, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 10
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=25]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.380392, 0.380392, 0.380392, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=21]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=20]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 10
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=22]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=16]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 1, 1, 1, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=17]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 1, 1, 1, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 10
+border_blend = true
+draw_bg = true
+
 [sub_resource type="StyleBoxFlat" id=18]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+bg_color = Color( 1, 1, 1, 1 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
@@ -278,19 +356,19 @@ shortcut = null
 text = "Ludu"
 flat = false
 
-[node name="Rugxa" type="Button" parent="."]
+[node name="Viola" type="Button" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 140.0
+margin/left = 460.0
 margin/top = 300.0
-margin/right = 220.0
+margin/right = 540.0
 margin/bottom = 379.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -300,19 +378,19 @@ enabled_focus_mode = 2
 shortcut = null
 flat = false
 
-[node name="Ambra" type="Button" parent="."]
+[node name="Blua" type="Button" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 220.0
+margin/left = 380.0
 margin/top = 300.0
-margin/right = 300.0
+margin/right = 460.0
 margin/bottom = 379.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 26 )
+custom_styles/pressed = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -344,19 +422,19 @@ enabled_focus_mode = 2
 shortcut = null
 flat = false
 
-[node name="Blua" type="Button" parent="."]
+[node name="Ambra" type="Button" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 380.0
+margin/left = 220.0
 margin/top = 300.0
-margin/right = 460.0
+margin/right = 300.0
 margin/bottom = 379.0
-custom_styles/hover = SubResource( 10 )
-custom_styles/pressed = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -366,19 +444,41 @@ enabled_focus_mode = 2
 shortcut = null
 flat = false
 
-[node name="Viola" type="Button" parent="."]
+[node name="Rugxa" type="Button" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 460.0
+margin/left = 140.0
 margin/top = 300.0
-margin/right = 540.0
+margin/right = 220.0
 margin/bottom = 379.0
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 14 )
-custom_styles/normal = SubResource( 15 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[node name="Griza" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 60.0
+margin/top = 300.0
+margin/right = 140.0
+margin/bottom = 379.0
+custom_styles/hover = SubResource( 23 )
+custom_styles/pressed = SubResource( 24 )
+custom_styles/normal = SubResource( 25 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -394,10 +494,32 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 60.0
-margin/top = 300.0
-margin/right = 140.0
-margin/bottom = 379.0
+margin/left = 460.0
+margin/top = 40.0
+margin/right = 540.0
+margin/bottom = 119.0
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/normal = SubResource( 22 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[node name="Blanka" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 360.0
+margin/top = 40.0
+margin/right = 440.0
+margin/bottom = 119.0
 custom_styles/hover = SubResource( 16 )
 custom_styles/pressed = SubResource( 17 )
 custom_styles/normal = SubResource( 18 )
@@ -523,17 +645,21 @@ stream/buffering_ms = 500
 
 [connection signal="pressed" from="Ludu" to="." method="_on_Ludu_pressed"]
 
-[connection signal="pressed" from="Rugxa" to="." method="_on_Rugxa_pressed"]
-
-[connection signal="pressed" from="Ambra" to="." method="_on_Ambra_pressed"]
-
-[connection signal="pressed" from="Verda" to="." method="_on_Verda_pressed"]
+[connection signal="pressed" from="Viola" to="." method="_on_Viola_pressed"]
 
 [connection signal="pressed" from="Blua" to="." method="_on_Blua_pressed"]
 
-[connection signal="pressed" from="Viola" to="." method="_on_Viola_pressed"]
+[connection signal="pressed" from="Verda" to="." method="_on_Verda_pressed"]
+
+[connection signal="pressed" from="Ambra" to="." method="_on_Ambra_pressed"]
+
+[connection signal="pressed" from="Rugxa" to="." method="_on_Rugxa_pressed"]
+
+[connection signal="pressed" from="Griza" to="." method="_on_Griza_pressed"]
 
 [connection signal="pressed" from="Nigra" to="." method="_on_Nigra_pressed"]
+
+[connection signal="pressed" from="Blanka" to="." method="_on_Blanka_pressed"]
 
 [connection signal="pressed" from="Lingvo" to="." method="_on_Lingvo_pressed"]
 

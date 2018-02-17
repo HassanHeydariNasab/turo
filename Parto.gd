@@ -3,6 +3,8 @@ extends RigidBody2D
 onready var Aspekto = get_node("Aspekto")
 
 func _ready():
+	if T.Radiko.koloro == "000000":
+		get_node("Aspekto").set_color("000000")
 	set_process(true)
 
 func _process(delta):

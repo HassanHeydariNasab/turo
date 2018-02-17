@@ -74,9 +74,10 @@ var oktavo = 3
 
 var koloroj = {"Rugxa":"E53935", "Ambra":"FFB300",
 				"Verda":"43A047", "Blua":"1E88E5",
-				"Viola":"8E24AA", "Nigra":"000000"
+				"Viola":"8E24AA", "Griza":"616161",
+				"Nigra":"000000", "Blanka":"ffffff"
 			}
-var cxefkoloro = "000000"
+var koloro = "ffffff"
 
 var rektangulo = false
 
@@ -88,8 +89,12 @@ func _ready():
 		str(T.Agordejo.get_value("Rekordo", "rekordo","0"))+"m"
 	)
 	Fono.set_color(
-		koloroj[T.Agordejo.get_value("Koloro", "koloro", "Nigra")]
+		koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")]
 	)
+	koloro = koloroj[T.Agordejo.get_value("Koloro", "koloro", "Blanka")]
+	if T.Radiko.koloro == "000000":
+		get_node("Tero/Aspekto").set_color("000000")
+		PreParto.get_node("Aspekto").set_color("000000")
 	var Senfinfino = get_node("Senfinfino")
 	Senfinfino.set_global_pos(Vector2(0,-101300))
 	Senfinfino.show()

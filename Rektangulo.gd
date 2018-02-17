@@ -3,6 +3,8 @@ extends Area2D
 onready var Kasxi = get_node("Kasxi")
 
 func _ready():
+	if T.Radiko.koloro == "000000":
+		get_node("Aspekto").set_color("000000")
 	randomize()
 	if int(rand_range(0,2)) == 0:
 		set_rotd(15)

@@ -123,6 +123,8 @@ script/script = ExtResource( 2 )
 
 [node name="Rektanguloj" type="Node2D" parent="."]
 
+[node name="Ebenoj" type="Node2D" parent="."]
+
 [node name="PreParto" type="Area2D" parent="."]
 
 editor/display_folded = true
@@ -147,9 +149,8 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Tero" type="StaticBody2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, -910 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -162,17 +163,17 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tero"]
 
 transform/pos = Vector2( 0, 880 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Aspekto" type="Polygon2D" parent="StaticBody2D"]
+[node name="Aspekto" type="Polygon2D" parent="Tero"]
 
 transform/pos = Vector2( 0, -80 )
-polygon = Vector2Array( -1810, 950, 1890, 950, 1890, 2100, -1810, 2100 )
+polygon = Vector2Array( -1810, 950, 1890, 950, 1890, 20000, -1810, 20000 )
 uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
@@ -234,9 +235,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 0
 size_flags/vertical = 2
-margin/left = 30.0
+margin/left = 29.0
 margin/top = 70.0
-margin/right = 0.0
+margin/right = -1.0
 margin/bottom = 0.0
 custom_styles/grabber_hilite = SubResource( 2 )
 custom_styles/grabber = SubResource( 3 )

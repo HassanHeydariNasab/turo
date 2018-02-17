@@ -3,6 +3,7 @@ extends Node2D
 onready var PreParto = get_node("PreParto")
 onready var Kamero = get_node("Kamero")
 onready var Fono = get_node("Fono")
+onready var Tero = get_node("Tero")
 onready var V_rulumilo = get_node("Kanvaso/V_rulumilo")
 onready var vido_Materialo = get_node("Kanvaso/vido_Materialo")
 onready var vido_Alto = get_node("Kanvaso/vido_Alto")
@@ -11,9 +12,10 @@ onready var vido_Rekordo_Brili = get_node("Kanvaso/vido_Rekordo/Brili")
 onready var Partoj = get_node("Partoj")
 onready var Materialoj = get_node("Materialoj")
 onready var Rektanguloj = get_node("Rektanguloj")
-onready var Fonmuziko  = get_node("Fonmuziko")
+onready var Ebenoj = get_node("Ebenoj")
 onready var T500 = get_node("T500")
 onready var T30000 = get_node("T30000")
+onready var Fonmuziko  = get_node("Fonmuziko")
 onready var C3_spiccato = get_node("C3_spiccato")
 onready var C5_spiccato = get_node("C5_spiccato")
 onready var E3_spiccato = get_node("E3_spiccato")
@@ -41,6 +43,7 @@ onready var Parto = preload("res://Parto.tscn")
 onready var Materialo = preload("res://Materialo.tscn")
 onready var Celo = preload("res://Celo.tscn")
 onready var Rektangulo = preload("res://Rektangulo.tscn")
+onready var Ebeno = preload("res://Ebeno.tscn")
 
 var Celo_ = null
 
@@ -114,6 +117,13 @@ func _ready():
 				i
 			))
 			Materialoj.add_child(Materialo_)
+		for i in range(-101000, 0, 13000):
+			randomize()
+			var Ebeno_ = Ebeno.instance()
+			Ebeno_.set_global_pos(
+				Vector2(300, i+rand_range(-4000,4000))
+			)
+			Ebenoj.add_child(Ebeno_)
 	else:
 		V_rulumilo.hide()
 		vido_Rekordo.hide()
@@ -165,23 +175,23 @@ func _input(evento):
 					if rektangulo:
 						rektangulo = false
 					if oktavo == 3:
-						if alto < 700:
+						if alto < 2000:
 							C3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto > 2000:
+						elif alto > 8000:
 							B3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto > 1200:
+						elif alto > 4000:
 							G3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 700:
+						elif alto >= 2000:
 							E3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						oktavo = 5
 					elif oktavo == 5:
-						if alto < 700:
+						if alto < 2000:
 							C5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto > 2000:
+						elif alto > 8000:
 							B5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto > 1200:
+						elif alto > 4000:
 							G5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 700:
+						elif alto >= 2000:
 							E5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 						oktavo = 3
 					var Parto_ = Parto.instance()

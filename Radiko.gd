@@ -46,10 +46,10 @@ var Celo_ = null
 
 var alto setget set_alto
 func set_alto(valoro):
-	if alto == null or int(valoro/8.45) > alto:
-		alto = int(valoro/8.45)
+	if alto == null or round(valoro*0.1186) > alto:
+		alto = round(valoro*0.1186)
 		if T.modo == 0:
-			V_rulumilo.set_value(-valoro+900)
+			V_rulumilo.set_value(-valoro)
 			vido_Alto.set_text(str(alto)+"m")
 			if alto > T.Agordejo.get_value("Rekordo", "rekordo",0):
 				Fonmuziko.set_volume_db(5)

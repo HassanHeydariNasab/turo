@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Testo.gd" type="Script" id=1]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 50, 50 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 490, 100 )
@@ -20,7 +20,7 @@ script/script = ExtResource( 1 )
 
 transform/pos = Vector2( 300, -50 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -43,7 +43,7 @@ damp_override/angular = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="K"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -65,7 +65,7 @@ invert/border = 100.0
 
 transform/pos = Vector2( -10, 90 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 330, 1010 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -78,7 +78,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="G"]
 
 transform/pos = Vector2( 330, 1010 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 

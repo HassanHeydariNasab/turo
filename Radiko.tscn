@@ -149,8 +149,7 @@ invert/border = 100.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 0, -1000 )
+transform/pos = Vector2( 0, -910 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 880 )
@@ -241,7 +240,7 @@ margin/bottom = 0.0
 custom_styles/grabber_hilite = SubResource( 2 )
 custom_styles/grabber = SubResource( 3 )
 range/min = -2000.0
-range/max = -600.0
+range/max = -400.0
 range/step = 0.0
 range/page = 0.0
 range/value = -600.0

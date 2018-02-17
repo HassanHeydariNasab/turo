@@ -118,7 +118,7 @@ func _ready():
 				i
 			))
 			Materialoj.add_child(Materialo_)
-		for i in range(-101000, -4000, 13000):
+		for i in range(-101000, 6000, 13000):
 			randomize()
 			var Ebeno_ = Ebeno.instance()
 			Ebeno_.set_global_pos(

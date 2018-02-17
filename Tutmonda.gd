@@ -7,10 +7,6 @@ var lingvo_elektita = false
 
 var Radiko = null
 
-# modo 0: senfina, modo 1: nivela
-var modo = 0
-var nivelo = 0
-
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		if get_tree().get_current_scene().get_name() == "Menuo":

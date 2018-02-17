@@ -1,6 +1,5 @@
 extends Control
 
-onready var Senfina = get_node("Senfina")
 onready var Rugxa = get_node("Rugxa")
 onready var Ambra = get_node("Ambra")
 onready var Verda = get_node("Verda")
@@ -18,12 +17,7 @@ func _ready():
 	get_node("Enveno_sono").set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 	get_node(T.Agordejo.get_value("Koloro", "koloro", "Nigra")).set_pressed(true)
 
-func _on_Normala_pressed():
-	T.modo = 1
-	get_tree().change_scene("res://Radiko.tscn")
-
-func _on_Senfina_pressed():
-	T.modo = 0
+func _on_Ludu_pressed():
 	get_tree().change_scene("res://Radiko.tscn")
 
 func _on_Lingvo_pressed():

@@ -42,7 +42,6 @@ onready var Materialo5_sono  = get_node("Materialo5_sono")
 #onready var FPS = get_node("Kanvaso/FPS")
 onready var Parto = preload("res://Parto.tscn")
 onready var Materialo = preload("res://Materialo.tscn")
-onready var Celo = preload("res://Celo.tscn")
 onready var Rektangulo = preload("res://Rektangulo.tscn")
 onready var Ebeno = preload("res://Ebeno.tscn")
 
@@ -52,20 +51,19 @@ var alto = 0 setget set_alto
 func set_alto(valoro):
 	if valoro*0.1186 >= alto:
 		alto = round(valoro*0.1186)
-		if T.modo == 0:
-			V_rulumilo.set_value(-valoro-100)
-			vido_Alto.set_text(str(alto)+"m")
-			if alto > T.Agordejo.get_value("Rekordo", "rekordo",0):
-				Fonmuziko.set_volume_db(5)
-				T.Agordejo.set_value("Rekordo", "rekordo", alto)
-				T.Agordejo.save(T.agordejo)
-				vido_Rekordo.set_text(
-					str(T.Agordejo.get_value("Rekordo", "rekordo",0))+"m"
-				)
-				vido_Rekordo_Brili.seek(0)
-				vido_Rekordo_Brili.resume_all()
-			else:
-				Fonmuziko.set_volume_db(0)
+		V_rulumilo.set_value(-valoro-100)
+		vido_Alto.set_text(str(alto)+"m")
+		if alto > T.Agordejo.get_value("Rekordo", "rekordo",0):
+			Fonmuziko.set_volume_db(5)
+			T.Agordejo.set_value("Rekordo", "rekordo", alto)
+			T.Agordejo.save(T.agordejo)
+			vido_Rekordo.set_text(
+				str(T.Agordejo.get_value("Rekordo", "rekordo",0))+"m"
+			)
+			vido_Rekordo_Brili.seek(0)
+			vido_Rekordo_Brili.resume_all()
+		else:
+			Fonmuziko.set_volume_db(0)
 
 var materialo setget set_materialo
 func set_materialo(valoro):
@@ -88,65 +86,42 @@ func _ready():
 	T.Radiko = self
 	self.materialo = 100
 	self.alto = 0
-	if T.modo == 0:
-		vido_Rekordo.set_text(
-			str(T.Agordejo.get_value("Rekordo", "rekordo","0"))+"m"
+	vido_Rekordo.set_text(
+		str(T.Agordejo.get_value("Rekordo", "rekordo","0"))+"m"
+	)
+	Fono.set_color(
+		koloroj[T.Agordejo.get_value("Koloro", "koloro", "Nigra")]
+	)
+	var Senfinfino = get_node("Senfinfino")
+	Senfinfino.set_global_pos(Vector2(0,-101300))
+	Senfinfino.show()
+	V_rulumilo.set_min(-101000)
+	for i in range(-101000, -500, 700):
+		randomize()
+		var Rektangulo_ = Rektangulo.instance()
+		Rektangulo_.set_global_pos(
+			Vector2(rand_range(100,500),
+			i
+		))
+		Rektanguloj.add_child(Rektangulo_)
+	for i in range(-101000, 0, 250):
+		randomize()
+		var Materialo_ = Materialo.instance()
+		var materialo_ = int(rand_range(50,200))
+		Materialo_.materialo = materialo_/2.5
+		Materialo_.set_scale(Vector2(materialo_/50, materialo_/50))
+		Materialo_.set_global_pos(
+			Vector2(rand_range(300-materialo_,300+materialo_),
+			i
+		))
+		Materialoj.add_child(Materialo_)
+	for i in range(-101000, 8000, 13000):
+		randomize()
+		var Ebeno_ = Ebeno.instance()
+		Ebeno_.set_global_pos(
+			Vector2(300, i+rand_range(-4000,4000))
 		)
-		Fono.set_color(
-			koloroj[T.Agordejo.get_value("Koloro", "koloro", "Nigra")]
-		)
-		var Senfinfino = get_node("Senfinfino")
-		Senfinfino.set_global_pos(Vector2(0,-101300))
-		Senfinfino.show()
-		V_rulumilo.set_min(-101000)
-		for i in range(-101000, -500, 700):
-			randomize()
-			var Rektangulo_ = Rektangulo.instance()
-			Rektangulo_.set_global_pos(
-				Vector2(rand_range(100,500),
-				i
-			))
-			Rektanguloj.add_child(Rektangulo_)
-		for i in range(-101000, 0, 250):
-			randomize()
-			var Materialo_ = Materialo.instance()
-			var materialo_ = int(rand_range(50,200))
-			Materialo_.materialo = materialo_/2.5
-			Materialo_.set_scale(Vector2(materialo_/50, materialo_/50))
-			Materialo_.set_global_pos(
-				Vector2(rand_range(300-materialo_,300+materialo_),
-				i
-			))
-			Materialoj.add_child(Materialo_)
-		for i in range(-101000, 6000, 13000):
-			randomize()
-			var Ebeno_ = Ebeno.instance()
-			Ebeno_.set_global_pos(
-				Vector2(300, i+rand_range(-4000,4000))
-			)
-			Ebenoj.add_child(Ebeno_)
-	else:
-		V_rulumilo.hide()
-		vido_Rekordo.hide()
-		vido_Alto.hide()
-		Kamero.set_offset(Vector2(Kamero.get_offset().x,-600))
-		Fono.set_global_pos(Kamero.get_offset()+Vector2(-300,-500))
-		Fono.set_color(fonkoloroj[T.nivelo%6])
-		Celo_ = Celo.instance()
-		Celo_.set_global_pos(Vector2(300,-950))
-		add_child(Celo_)
-		for i in range(-800, -200, 50):
-			for j in range(2):
-				randomize()
-				var Materialo_ = Materialo.instance()
-				var materialo_ = int(rand_range(50,100))
-				Materialo_.materialo = materialo_/2.5
-				Materialo_.set_scale(Vector2(materialo_/50, materialo_/50))
-				Materialo_.set_global_pos(
-					Vector2(rand_range(300-materialo_,300+materialo_),
-					i+rand_range(0,100)
-				))
-				Materialoj.add_child(Materialo_)
+		Ebenoj.add_child(Ebeno_)
 	Fonmuziko.set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	vido_Rekordo_Brili.interpolate_property(vido_Rekordo,
 		"custom_colors/font_color", Color("ffffff"), Color("D500F9"), 0.25,
@@ -163,7 +138,7 @@ func _ready():
 func _input(evento):
 	if evento.type == InputEvent.MOUSE_BUTTON:
 		if evento.button_index == BUTTON_LEFT:
-			if evento.pos.y > 70 and (T.modo == 1 or evento.pos.x < 570):
+			if evento.pos.y > 70 and evento.pos.x < 570:
 				if evento.is_pressed() and materialo > 0:
 					PreParto.set_scale(Vector2(1,1))
 					PreParto.set_global_pos(get_global_mouse_pos())
@@ -205,12 +180,12 @@ func _input(evento):
 					Partoj.add_child(Parto_)
 					Parto_.Aspekto.set_scale(PreParto.get_scale())
 		
-		elif evento.button_index == BUTTON_WHEEL_UP and T.modo == 0:
+		elif evento.button_index == BUTTON_WHEEL_UP:
 			V_rulumilo.set_value(V_rulumilo.get_value()-100)
-		elif evento.button_index == BUTTON_WHEEL_DOWN and T.modo == 0:
+		elif evento.button_index == BUTTON_WHEEL_DOWN:
 			V_rulumilo.set_value(V_rulumilo.get_value()+100)
 	elif evento.type == InputEvent.MOUSE_MOTION:
-		if evento.pos.y > 70 and (T.modo == 1 or evento.pos.x < 570):
+		if evento.pos.y > 70 and evento.pos.x < 570:
 			PreParto.set_global_pos(get_global_mouse_pos())
 
 func _fixed_process(delta):

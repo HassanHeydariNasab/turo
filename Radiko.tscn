@@ -98,7 +98,7 @@ invert/border = 100.0
 [node name="Kamero" type="Camera2D" parent="."]
 
 z/z = -2
-offset = Vector2( 300, -600 )
+offset = Vector2( 300, -300 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -149,6 +149,7 @@ invert/border = 100.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -910 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -240,10 +241,10 @@ margin/bottom = 0.0
 custom_styles/grabber_hilite = SubResource( 2 )
 custom_styles/grabber = SubResource( 3 )
 range/min = -2000.0
-range/max = -400.0
+range/max = -300.0
 range/step = 0.0
 range/page = 0.0
-range/value = -600.0
+range/value = -300.0
 range/exp_edit = false
 range/rounded = false
 custom_step = -1.0

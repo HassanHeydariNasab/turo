@@ -19,7 +19,7 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 	get_node("Enveno_sono").set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 	get_node(T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")).set_pressed(true)
-	get_node(T.Agordejo.get_value("Koloro", "koloro", "Nigra")).set_pressed(true)
+	get_node(T.Agordejo.get_value("Koloro", "koloro", "Blanka")).set_pressed(true)
 
 func _on_Ludu_pressed():
 	get_tree().change_scene("res://Radiko.tscn")

@@ -33,6 +33,7 @@ onready var C3_chimes = get_node("C3_chimes")
 onready var C4_chimes = get_node("C4_chimes")
 onready var Crash_14 = get_node("Crash_14")
 onready var Kreski_sono  = get_node("Kreski_sono")
+onready var Ebeno_sono  = get_node("Ebeno_sono")
 onready var Materialo1_sono  = get_node("Materialo1_sono")
 onready var Materialo2_sono  = get_node("Materialo2_sono")
 onready var Materialo3_sono  = get_node("Materialo3_sono")
@@ -117,7 +118,7 @@ func _ready():
 				i
 			))
 			Materialoj.add_child(Materialo_)
-		for i in range(-101000, 0, 13000):
+		for i in range(-101000, -4000, 13000):
 			randomize()
 			var Ebeno_ = Ebeno.instance()
 			Ebeno_.set_global_pos(

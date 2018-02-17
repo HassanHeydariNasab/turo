@@ -72,13 +72,11 @@ func set_materialo(valoro):
 
 var oktavo = 3
 
-var fonkoloroj = ["E53935", "FB8C00", "FDD835",
-					"7CB342", "039BE5", "8E24AA"
-				]
 var koloroj = {"Rugxa":"E53935", "Ambra":"FFB300",
 				"Verda":"43A047", "Blua":"1E88E5",
 				"Viola":"8E24AA", "Nigra":"000000"
 			}
+var cxefkoloro = "000000"
 
 var rektangulo = false
 

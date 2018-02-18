@@ -118,6 +118,26 @@ drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 script/script = ExtResource( 2 )
 
+[node name="Senfinfino" type="Label" parent="."]
+
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 150.0
+margin/right = 950.0
+margin/bottom = 267.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ĉi tie estas la fino de senfino!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="Partoj" type="Node2D" parent="."]
 
 [node name="Materialoj" type="Node2D" parent="."]
@@ -185,26 +205,6 @@ texture/scale = Vector2( 1, 1 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
-
-[node name="Senfinfino" type="Label" parent="."]
-
-visibility/visible = false
-rect/scale = Vector2( 0.6, 0.6 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 150.0
-margin/right = 950.0
-margin/bottom = 267.0
-custom_fonts/font = ExtResource( 3 )
-text = "Ĉi tie estas la fino de senfino!"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="T500" type="Timer" parent="."]
 

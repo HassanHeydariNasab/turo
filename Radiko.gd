@@ -92,12 +92,12 @@ func _ready():
 		koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")]
 	)
 	koloro = koloroj[T.Agordejo.get_value("Koloro", "koloro", "Blanka")]
+	var Senfinfino = get_node("Senfinfino")
+	Senfinfino.set_global_pos(Vector2(0,-101300))
 	if T.Radiko.koloro == "000000":
 		get_node("Tero/Aspekto").set_color("000000")
 		PreParto.get_node("Aspekto").set_color("000000")
-	var Senfinfino = get_node("Senfinfino")
-	Senfinfino.set_global_pos(Vector2(0,-101300))
-	Senfinfino.show()
+		Senfinfino.set("custom_colors/font_color", "000000")
 	V_rulumilo.set_min(-101000)
 	for i in range(-101000, -500, 700):
 		randomize()
@@ -118,11 +118,11 @@ func _ready():
 			i
 		))
 		Materialoj.add_child(Materialo_)
-	for i in range(-101000, 8000, 13000):
+	for i in range(-101000, -4000, 12000):
 		randomize()
 		var Ebeno_ = Ebeno.instance()
 		Ebeno_.set_global_pos(
-			Vector2(300, i+rand_range(-4000,4000))
+			Vector2(300, i+rand_range(-2000,4000))
 		)
 		Ebenoj.add_child(Ebeno_)
 	Fonmuziko.set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))

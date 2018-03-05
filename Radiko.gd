@@ -81,6 +81,8 @@ var koloro = "ffffff"
 
 var rektangulo = false
 
+var enajxoj = []
+
 func _ready():
 	T.Radiko = self
 	self.materialo = 100
@@ -148,7 +150,7 @@ func _input(evento):
 					PreParto.show()
 					Kreski_sono.stop()
 					Kreski_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-				elif PreParto.is_visible():
+				elif PreParto.is_visible() and enajxoj.size() == 0:
 					PreParto.hide()
 					Kreski_sono.stop()
 					if rektangulo:
@@ -271,3 +273,9 @@ func _on_T30000_timeout():
 func _on_Brili_tween_step( object, key, elapsed, value ):
 	if elapsed == 0.5:
 		vido_Rekordo_Brili.stop_all()
+
+func _on_PreParto_body_enter( korpo ):
+	enajxoj.append(korpo)
+
+func _on_PreParto_body_exit( korpo ):
+	enajxoj.erase(korpo)

@@ -189,6 +189,25 @@ shortcut = null
 text = "litecoin:LgeGeVU9JAxyXpanPtsBRAX5QHxvUJo8id"
 underline = 2
 
+[node name="Etikedo" type="Label" parent="Donaci"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 620.0
+margin/right = 600.0
+margin/bottom = 700.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Donaco"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="Enveno_sono" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 8 )

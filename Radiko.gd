@@ -83,6 +83,8 @@ var rektangulo = false
 
 var enajxoj = []
 
+var konsumita_materialo = 0
+
 func _ready():
 	T.Radiko = self
 	self.materialo = 100
@@ -145,45 +147,51 @@ func _input(evento):
 		if evento.button_index == BUTTON_LEFT:
 			if evento.pos.y > 70 and evento.pos.x < 570:
 				if evento.is_pressed() and materialo > 0:
+					konsumita_materialo = 0
 					PreParto.set_scale(Vector2(1,1))
 					PreParto.set_global_pos(get_global_mouse_pos())
 					PreParto.show()
 					Kreski_sono.stop()
 					Kreski_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-				elif PreParto.is_visible() and enajxoj.size() == 0:
-					PreParto.hide()
-					Kreski_sono.stop()
-					if rektangulo:
-						rektangulo = false
-					if oktavo == 3:
-						if alto < 2000:
-							C3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto > 8000:
-							B3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto > 4000:
-							G3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 2000:
-							E3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						oktavo = 5
-					elif oktavo == 5:
-						if alto < 2000:
-							C5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto > 8000:
-							B5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto > 4000:
-							G5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						elif alto >= 2000:
-							E5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
-						oktavo = 3
-					var Parto_ = Parto.instance()
-					Parto_.set_global_pos(PreParto.get_global_pos())
-					var Formo_ = RectangleShape2D.new()
-					Formo_.set_extents(Vector2(10,10)*PreParto.get_scale())
-					Parto_.add_shape(Formo_)
-					Parto_.set_mass(PreParto.get_scale().x/100)
-					Parto_.set_sleeping(false)
-					Partoj.add_child(Parto_)
-					Parto_.Aspekto.set_scale(PreParto.get_scale())
+				elif PreParto.is_visible():
+					if enajxoj.size() == 0:
+						PreParto.hide()
+						Kreski_sono.stop()
+						if rektangulo:
+							rektangulo = false
+						if oktavo == 3:
+							if alto < 2000:
+								C3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+							elif alto > 8000:
+								B3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+							elif alto > 4000:
+								G3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+							elif alto >= 2000:
+								E3_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+							oktavo = 5
+						elif oktavo == 5:
+							if alto < 2000:
+								C5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+							elif alto > 8000:
+								B5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+							elif alto > 4000:
+								G5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+							elif alto >= 2000:
+								E5_spiccato.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+							oktavo = 3
+						var Parto_ = Parto.instance()
+						Parto_.set_global_pos(PreParto.get_global_pos())
+						var Formo_ = RectangleShape2D.new()
+						Formo_.set_extents(Vector2(10,10)*PreParto.get_scale())
+						Parto_.add_shape(Formo_)
+						Parto_.set_mass(PreParto.get_scale().x/100)
+						Parto_.set_sleeping(false)
+						Partoj.add_child(Parto_)
+						Parto_.Aspekto.set_scale(PreParto.get_scale())
+					else:
+						PreParto.hide()
+						Kreski_sono.stop()
+						self.materialo += konsumita_materialo/2
 		
 		elif evento.button_index == BUTTON_WHEEL_UP:
 			V_rulumilo.set_value(V_rulumilo.get_value()-100)
@@ -203,6 +211,7 @@ func _fixed_process(delta):
 		else:
 			PreParto.set_scale(Vector2(faktoro,faktoro))
 		self.materialo -= 1
+		konsumita_materialo += 1
 	elif self.materialo <= 0:
 		Kreski_sono.stop()
 

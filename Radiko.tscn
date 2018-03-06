@@ -30,17 +30,17 @@
 [ext_resource path="res://Sonoj/Tabloj/130430__mmiron__tas-3.ogg" type="AudioStream" id=28]
 [ext_resource path="res://Sonoj/Tabloj/130428__mmiron__na-sharp.ogg" type="AudioStream" id=29]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 20000, 10 )
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -53,7 +53,7 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -66,7 +66,7 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=5]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -155,7 +155,7 @@ max_lines_visible = -1
 
 visibility/visible = false
 input/pickable = true
-shapes/0/shape = SubResource( 5 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -180,7 +180,7 @@ invert/border = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PreParto"]
 
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -188,7 +188,7 @@ _update_shape_index = 0
 
 transform/pos = Vector2( 0, -910 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 880 )
 shapes/0/trigger = false
 collision/layers = 0
@@ -201,7 +201,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tero"]
 
 transform/pos = Vector2( 0, 880 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
@@ -254,8 +254,8 @@ margin/left = 29.0
 margin/top = 70.0
 margin/right = -1.0
 margin/bottom = 0.0
-custom_styles/grabber_hilite = SubResource( 2 )
-custom_styles/grabber = SubResource( 3 )
+custom_styles/grabber_hilite = SubResource( 3 )
+custom_styles/grabber = SubResource( 4 )
 range/min = -2000.0
 range/max = -300.0
 range/step = 0.0
@@ -289,7 +289,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 450.0
 margin/bottom = 69.0
-custom_styles/fg = SubResource( 4 )
+custom_styles/fg = SubResource( 5 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 range/min = 0.0

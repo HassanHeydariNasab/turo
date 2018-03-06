@@ -10,6 +10,8 @@ onready var Griza = get_node("Griza")
 onready var Blanka = get_node("Blanka")
 onready var Nigra = get_node("Nigra")
 
+onready var Fono = get_node("Fono")
+
 func _init():
 	var lingvo = T.Agordejo.get_value("Lingvo", "lingvo")
 	if TranslationServer.get_locale() != lingvo:
@@ -19,7 +21,8 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 	get_node("Enveno_sono").set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 	get_node(T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")).set_pressed(true)
-	get_node(T.Agordejo.get_value("Koloro", "koloro", "Blanka")).set_pressed(true)
+	get_node(T.Agordejo.get_value("Koloro", "koloro", "Nigra")).set_pressed(true)
+	Fono.set_color(T.koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")])
 
 func _on_Ludu_pressed():
 	get_tree().change_scene("res://Radiko.tscn")
@@ -39,6 +42,7 @@ func _on_Eliri_pressed():
 func _on_Rugxa_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Rugxa")
 	T.Agordejo.save(T.agordejo)
+	Fono.set_color(T.koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")])
 	Rugxa.set_pressed(true)
 	Ambra.set_pressed(false)
 	Verda.set_pressed(false)
@@ -49,6 +53,7 @@ func _on_Rugxa_pressed():
 func _on_Ambra_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Ambra")
 	T.Agordejo.save(T.agordejo)
+	Fono.set_color(T.koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")])
 	Rugxa.set_pressed(false)
 	Ambra.set_pressed(true)
 	Verda.set_pressed(false)
@@ -59,6 +64,7 @@ func _on_Ambra_pressed():
 func _on_Verda_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Verda")
 	T.Agordejo.save(T.agordejo)
+	Fono.set_color(T.koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")])
 	Rugxa.set_pressed(false)
 	Ambra.set_pressed(false)
 	Verda.set_pressed(true)
@@ -69,6 +75,7 @@ func _on_Verda_pressed():
 func _on_Blua_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Blua")
 	T.Agordejo.save(T.agordejo)
+	Fono.set_color(T.koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")])
 	Rugxa.set_pressed(false)
 	Ambra.set_pressed(false)
 	Verda.set_pressed(false)
@@ -79,6 +86,7 @@ func _on_Blua_pressed():
 func _on_Viola_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Viola")
 	T.Agordejo.save(T.agordejo)
+	Fono.set_color(T.koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")])
 	Rugxa.set_pressed(false)
 	Ambra.set_pressed(false)
 	Verda.set_pressed(false)
@@ -89,6 +97,7 @@ func _on_Viola_pressed():
 func _on_Griza_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Griza")
 	T.Agordejo.save(T.agordejo)
+	Fono.set_color(T.koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")])
 	Rugxa.set_pressed(false)
 	Ambra.set_pressed(false)
 	Verda.set_pressed(false)

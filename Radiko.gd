@@ -72,12 +72,7 @@ func set_materialo(valoro):
 
 var oktavo = 3
 
-var koloroj = {"Rugxa":"E53935", "Ambra":"FFB300",
-				"Verda":"43A047", "Blua":"1E88E5",
-				"Viola":"8E24AA", "Griza":"616161",
-				"Nigra":"000000", "Blanka":"ffffff"
-			}
-var koloro = "ffffff"
+var koloro = "000000"
 
 var rektangulo = false
 
@@ -93,15 +88,15 @@ func _ready():
 		str(T.Agordejo.get_value("Rekordo", "rekordo","0"))+"m"
 	)
 	Fono.set_color(
-		koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")]
+		T.koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")]
 	)
-	koloro = koloroj[T.Agordejo.get_value("Koloro", "koloro", "Blanka")]
+	koloro = T.koloroj[T.Agordejo.get_value("Koloro", "koloro", "Nigra")]
 	var Senfinfino = get_node("Senfinfino")
 	Senfinfino.set_global_pos(Vector2(0,-101300))
-	if T.Radiko.koloro == "000000":
-		get_node("Tero/Aspekto").set_color("000000")
-		PreParto.get_node("Aspekto").set_color("000000")
-		Senfinfino.set("custom_colors/font_color", "000000")
+	if T.Radiko.koloro == "ffffff":
+		get_node("Tero/Aspekto").set_color("ffffff")
+		PreParto.get_node("Aspekto").set_color("ffffff")
+		Senfinfino.set("custom_colors/font_color", "ffffff")
 	V_rulumilo.set_min(-101000)
 	for i in range(-101000, -500, 700):
 		randomize()

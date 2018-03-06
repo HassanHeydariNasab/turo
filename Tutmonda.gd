@@ -7,6 +7,12 @@ var lingvo_elektita = false
 
 var Radiko = null
 
+var koloroj = {"Rugxa":"E53935", "Ambra":"FFB300",
+				"Verda":"43A047", "Blua":"1E88E5",
+				"Viola":"8E24AA", "Griza":"616161",
+				"Nigra":"000000", "Blanka":"ffffff"
+			}
+
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		if get_tree().get_current_scene().get_name() == "Menuo":

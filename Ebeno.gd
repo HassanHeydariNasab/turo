@@ -2,8 +2,8 @@ extends Area2D
 
 
 func _ready():
-	if T.Radiko.koloro == "000000":
-		get_node("Aspekto").set_color("000000")
+	if T.Radiko.koloro == "ffffff":
+		get_node("Aspekto").set_color("ffffff")
 
 
 func _on_Ebeno_body_enter( korpo ):

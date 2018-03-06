@@ -5,8 +5,8 @@ onready var Kasxi = get_node("Kasxi")
 var materialo = 100
 
 func _ready():
-	if T.Radiko.koloro == "000000":
-		get_node("Aspekto").set_color("000000")
+	if T.Radiko.koloro == "ffffff":
+		get_node("Aspekto").set_color("ffffff")
 
 func _on_Materialo_body_enter( korpo ):
 	clear_shapes()

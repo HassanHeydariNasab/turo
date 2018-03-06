@@ -351,7 +351,7 @@ invert/border = 100.0
 
 [node name="Fono_koloroj" type="Polygon2D" parent="."]
 
-transform/pos = Vector2( 0, 20 )
+transform/pos = Vector2( 0, 160 )
 polygon = Vector2Array( 600, 220, 590, 250, 580, 270, 560, 280, 40, 280, 20, 270, 10, 250, 0, 220, 0, 460, 10, 430, 20, 410, 40, 400, 560, 400, 580, 410, 590, 430, 600, 460 )
 uv = Vector2Array(  )
 color = Color( 0, 0, 0, 1 )
@@ -372,9 +372,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
-margin/top = 140.0
+margin/top = 120.0
 margin/right = 660.0
-margin/bottom = 315.0
+margin/bottom = 295.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/focus = ExtResource( 2 )
@@ -389,6 +389,31 @@ shortcut = null
 text = "Ludu"
 flat = false
 
+[node name="Puzloj" type="Button" parent="."]
+
+rect/scale = Vector2( 0.8, 0.8 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 60.0
+margin/top = 280.0
+margin/right = 660.0
+margin/bottom = 455.0
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Puzloj"
+flat = false
+
 [node name="Viola" type="Button" parent="."]
 
 focus/ignore_mouse = false
@@ -396,9 +421,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 460.0
-margin/top = 320.0
+margin/top = 460.0
 margin/right = 540.0
-margin/bottom = 399.0
+margin/bottom = 539.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
@@ -418,9 +443,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 380.0
-margin/top = 320.0
+margin/top = 460.0
 margin/right = 460.0
-margin/bottom = 399.0
+margin/bottom = 539.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
@@ -440,9 +465,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 300.0
-margin/top = 320.0
+margin/top = 460.0
 margin/right = 380.0
-margin/bottom = 399.0
+margin/bottom = 539.0
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
@@ -462,9 +487,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 220.0
-margin/top = 320.0
+margin/top = 460.0
 margin/right = 300.0
-margin/bottom = 399.0
+margin/bottom = 539.0
 custom_styles/hover = SubResource( 10 )
 custom_styles/pressed = SubResource( 11 )
 custom_styles/normal = SubResource( 12 )
@@ -484,9 +509,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 140.0
-margin/top = 320.0
+margin/top = 460.0
 margin/right = 220.0
-margin/bottom = 399.0
+margin/bottom = 539.0
 custom_styles/hover = SubResource( 13 )
 custom_styles/pressed = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
@@ -506,9 +531,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
-margin/top = 320.0
+margin/top = 460.0
 margin/right = 140.0
-margin/bottom = 399.0
+margin/bottom = 539.0
 custom_styles/hover = SubResource( 16 )
 custom_styles/pressed = SubResource( 17 )
 custom_styles/normal = SubResource( 18 )
@@ -528,9 +553,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 460.0
-margin/top = 40.0
+margin/top = 20.0
 margin/right = 540.0
-margin/bottom = 119.0
+margin/bottom = 99.0
 custom_styles/hover = SubResource( 19 )
 custom_styles/pressed = SubResource( 20 )
 custom_styles/normal = SubResource( 21 )
@@ -550,9 +575,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 360.0
-margin/top = 40.0
+margin/top = 20.0
 margin/right = 440.0
-margin/bottom = 119.0
+margin/bottom = 99.0
 custom_styles/hover = SubResource( 22 )
 custom_styles/pressed = SubResource( 23 )
 custom_styles/normal = SubResource( 24 )
@@ -573,9 +598,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
-margin/top = 440.0
-margin/right = 717.0
-margin/bottom = 611.0
+margin/top = 580.0
+margin/right = 746.0
+margin/bottom = 751.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/focus = ExtResource( 2 )
@@ -597,10 +622,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 60.0
-margin/top = 580.0
-margin/right = 717.0
-margin/bottom = 751.0
+margin/left = 240.0
+margin/top = 720.0
+margin/right = 669.0
+margin/bottom = 891.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/focus = ExtResource( 2 )
@@ -615,6 +640,38 @@ shortcut = null
 text = "Agordoj"
 flat = false
 
+[node name="Malpura2" type="Polygon2D" parent="Agordoj"]
+
+transform/pos = Vector2( -225.714, 0 )
+transform/scale = Vector2( 1, 1 )
+polygon = Vector2Array( 228.571, 0, 234.286, 0, 234.286, 170, 228.571, 170 )
+uv = Vector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Malpura3" type="Polygon2D" parent="Agordoj"]
+
+transform/pos = Vector2( 190, 0 )
+transform/scale = Vector2( 1, 1 )
+polygon = Vector2Array( 230, 0, 234.286, 0, 234.286, 170, 230, 170 )
+uv = Vector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
 [node name="Pri" type="Button" parent="."]
 
 rect/scale = Vector2( 0.7, 0.7 )
@@ -624,7 +681,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
 margin/top = 720.0
-margin/right = 717.0
+margin/right = 289.0
 margin/bottom = 891.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
@@ -640,6 +697,35 @@ shortcut = null
 text = "Pri"
 flat = false
 
+[node name="Malpura" type="Polygon2D" parent="Pri"]
+
+polygon = Vector2Array( 220, 0, 228.571, 0, 228.571, 168.571, 220, 168.571 )
+uv = Vector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Malpura1" type="Polygon2D" parent="Pri"]
+
+transform/pos = Vector2( -234.286, 0 )
+polygon = Vector2Array( 237.143, 0, 242.857, 0, 242.857, 168.571, 237.143, 168.571 )
+uv = Vector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
 [node name="Eliri" type="Button" parent="."]
 
 rect/scale = Vector2( 0.7, 0.7 )
@@ -649,7 +735,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
 margin/top = 860.0
-margin/right = 717.0
+margin/right = 746.0
 margin/bottom = 1031.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )

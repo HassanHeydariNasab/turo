@@ -27,6 +27,9 @@ func _ready():
 func _on_Ludu_pressed():
 	get_tree().change_scene("res://Radiko.tscn")
 
+func _on_Puzloj_pressed():
+	get_tree().change_scene("res://Niveloj.tscn")
+
 func _on_Lingvo_pressed():
 	get_tree().change_scene("res://Lingvo.tscn")
 
@@ -111,7 +114,6 @@ func _on_Nigra_pressed():
 	T.Agordejo.save(T.agordejo)
 	Blanka.set_pressed(false)
 	Nigra.set_pressed(true)
-
 
 func _on_Blanka_pressed():
 	T.Agordejo.set_value("Koloro", "koloro", "Blanka")

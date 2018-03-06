@@ -764,6 +764,8 @@ stream/buffering_ms = 500
 
 [connection signal="pressed" from="Ludu" to="." method="_on_Ludu_pressed"]
 
+[connection signal="pressed" from="Puzloj" to="." method="_on_Puzloj_pressed"]
+
 [connection signal="pressed" from="Viola" to="." method="_on_Viola_pressed"]
 
 [connection signal="pressed" from="Blua" to="." method="_on_Blua_pressed"]

@@ -13,6 +13,7 @@ onready var Partoj = get_node("Partoj")
 onready var Materialoj = get_node("Materialoj")
 onready var Rektanguloj = get_node("Rektanguloj")
 onready var Ebenoj = get_node("Ebenoj")
+onready var Fono_Sxangxi = get_node("Fono/Sxangxi")
 onready var T500 = get_node("T500")
 onready var T30000 = get_node("T30000")
 onready var Fonmuziko  = get_node("Fonmuziko")
@@ -286,3 +287,6 @@ func _on_PreParto_body_enter( korpo ):
 
 func _on_PreParto_body_exit( korpo ):
 	enajxoj.erase(korpo)
+
+func _on_Sxangxi_tween_complete( object, key ):
+	Fono_Sxangxi.remove_all()

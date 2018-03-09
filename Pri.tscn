@@ -51,7 +51,7 @@ margin/right = 600.0
 margin/bottom = -560.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "v1.2.0"
+text = "v1.3.0"
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -68,9 +68,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
-margin/top = -20.0
+margin/top = 40.0
 margin/right = -746.0
-margin/bottom = -191.0
+margin/bottom = -131.0
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 3 )
@@ -96,9 +96,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
-margin/top = -180.0
+margin/top = -120.0
 margin/right = -746.0
-margin/bottom = -351.0
+margin/bottom = -291.0
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 3 )
@@ -141,13 +141,13 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 440.0
+margin/top = 520.0
 margin/right = -40.0
-margin/bottom = 400.0
+margin/bottom = 480.0
 
 [node name="Fono" type="Polygon2D" parent="Donaci"]
 
-polygon = Vector2Array( 0, 700, 600, 700, 600, 860, 0, 860 )
+polygon = Vector2Array( 0, 700, 600, 700, 600, 940, 0, 940 )
 uv = Vector2Array(  )
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 vertex_colors = ColorArray(  )
@@ -161,14 +161,14 @@ invert/border = 100.0
 
 [node name="Bitcoin" type="LinkButton" parent="Donaci"]
 
-rect/scale = Vector2( 0.4, 0.4 )
+rect/scale = Vector2( 0.38, 0.38 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 13.0
+margin/left = 20.0
 margin/top = 740.0
-margin/right = 1463.0
+margin/right = 1443.0
 margin/bottom = 819.0
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -182,14 +182,14 @@ underline = 2
 
 [node name="Litecoin" type="LinkButton" parent="Donaci"]
 
-rect/scale = Vector2( 0.4, 0.4 )
+rect/scale = Vector2( 0.38, 0.38 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 20.0
 margin/top = 800.0
-margin/right = 1460.0
+margin/right = 1461.0
 margin/bottom = 879.0
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -199,6 +199,27 @@ toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 text = "litecoin:LgeGeVU9JAxyXpanPtsBRAX5QHxvUJo8id"
+underline = 2
+
+[node name="Ethereum" type="LinkButton" parent="Donaci"]
+
+rect/scale = Vector2( 0.32, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 860.0
+margin/right = 1772.0
+margin/bottom = 960.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.960784, 0.960784, 0.960784, 1 )
+custom_colors/font_color_pressed = Color( 0.878431, 0.878431, 0.878431, 1 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "ethereum:0x8472eb39e5bddd14173bce4ed06e287876fb2f2c"
 underline = 2
 
 [node name="Etikedo" type="Label" parent="Donaci"]
@@ -240,5 +261,7 @@ stream/buffering_ms = 500
 [connection signal="pressed" from="Donaci/Bitcoin" to="." method="_on_Bitcoin_pressed"]
 
 [connection signal="pressed" from="Donaci/Litecoin" to="." method="_on_Litecoin_pressed"]
+
+[connection signal="pressed" from="Donaci/Ethereum" to="." method="_on_Ethereum_pressed"]
 
 

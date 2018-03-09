@@ -18,5 +18,8 @@ func _on_Bitcoin_pressed():
 func _on_Litecoin_pressed():
 	OS.shell_open("litecoin:LgeGeVU9JAxyXpanPtsBRAX5QHxvUJo8id")
 
+func _on_Ethereum_pressed():
+	OS.shell_open("ethereum:0x8472eb39e5bddd14173bce4ed06e287876fb2f2c")
+
 func _on_Reen_pressed():
 	get_tree().change_scene("res://Menuo.tscn")

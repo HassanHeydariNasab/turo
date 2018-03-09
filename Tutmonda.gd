@@ -10,8 +10,10 @@ var Radiko = null
 var koloroj = {"Rugxa":"E53935", "Ambra":"FFB300",
 				"Verda":"43A047", "Blua":"1E88E5",
 				"Viola":"8E24AA", "Griza":"616161",
-				"Nigra":"000000", "Blanka":"ffffff"
+				"Nigra":"000000", "Blanka":"ffffff",
+				"Multkolora":"616161"
 			}
+var multkoloroj = ["Rugxa", "Ambra", "Verda", "Blua", "Viola", "Griza"]
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:

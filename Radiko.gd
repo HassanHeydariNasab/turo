@@ -80,6 +80,9 @@ var enajxoj = []
 
 var konsumita_materialo = 0
 
+# por multkolora
+var fonkoloro = 0
+
 func _ready():
 	T.Radiko = self
 	self.materialo = 100

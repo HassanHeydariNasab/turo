@@ -6,6 +6,7 @@ onready var Verda = get_node("Verda")
 onready var Blua = get_node("Blua")
 onready var Viola = get_node("Viola")
 onready var Griza = get_node("Griza")
+onready var Multkolora = get_node("Multkolora")
 
 onready var Blanka = get_node("Blanka")
 onready var Nigra = get_node("Nigra")
@@ -52,6 +53,7 @@ func _on_Rugxa_pressed():
 	Blua.set_pressed(false)
 	Viola.set_pressed(false)
 	Griza.set_pressed(false)
+	Multkolora.set_pressed(false)
 
 func _on_Ambra_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Ambra")
@@ -63,6 +65,7 @@ func _on_Ambra_pressed():
 	Blua.set_pressed(false)
 	Viola.set_pressed(false)
 	Griza.set_pressed(false)
+	Multkolora.set_pressed(false)
 
 func _on_Verda_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Verda")
@@ -74,6 +77,7 @@ func _on_Verda_pressed():
 	Blua.set_pressed(false)
 	Viola.set_pressed(false)
 	Griza.set_pressed(false)
+	Multkolora.set_pressed(false)
 
 func _on_Blua_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Blua")
@@ -85,6 +89,7 @@ func _on_Blua_pressed():
 	Blua.set_pressed(true)
 	Viola.set_pressed(false)
 	Griza.set_pressed(false)
+	Multkolora.set_pressed(false)
 
 func _on_Viola_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Viola")
@@ -96,6 +101,7 @@ func _on_Viola_pressed():
 	Blua.set_pressed(false)
 	Viola.set_pressed(true)
 	Griza.set_pressed(false)
+	Multkolora.set_pressed(false)
 
 func _on_Griza_pressed():
 	T.Agordejo.set_value("Koloro", "fonkoloro", "Griza")
@@ -107,7 +113,19 @@ func _on_Griza_pressed():
 	Blua.set_pressed(false)
 	Viola.set_pressed(false)
 	Griza.set_pressed(true)
+	Multkolora.set_pressed(false)
 
+func _on_Multkolora_pressed():
+	T.Agordejo.set_value("Koloro", "fonkoloro", "Multkolora")
+	T.Agordejo.save(T.agordejo)
+	Fono.set_color(T.koloroj[T.Agordejo.get_value("Koloro", "fonkoloro", "Griza")])
+	Rugxa.set_pressed(false)
+	Ambra.set_pressed(false)
+	Verda.set_pressed(false)
+	Blua.set_pressed(false)
+	Viola.set_pressed(false)
+	Griza.set_pressed(false)
+	Multkolora.set_pressed(true)
 
 func _on_Nigra_pressed():
 	T.Agordejo.set_value("Koloro", "koloro", "Nigra")

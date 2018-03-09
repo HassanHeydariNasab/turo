@@ -13,4 +13,8 @@ func _on_Ebeno_body_enter( korpo ):
 	for Parto_ in Partoj_:
 		Parto_.queue_free()
 	T.Radiko.Tero.set_global_pos(Vector2(300,get_global_pos().y-880))
+	if T.Agordejo.get_value("Koloro", "fonkoloro", "Griza") == "Multkolora":
+		T.Radiko.Fono.set_color(T.koloroj[T.multkoloroj[T.Radiko.fonkoloro]])
+		T.Radiko.fonkoloro = (T.Radiko.fonkoloro+1) % T.multkoloroj.size()
+		print(T.Radiko.fonkoloro)
 	queue_free()

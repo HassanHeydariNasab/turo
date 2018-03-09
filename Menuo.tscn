@@ -1,11 +1,13 @@
-[gd_scene load_steps=31 format=1]
+[gd_scene load_steps=36 format=1]
 
 [ext_resource path="res://Menuo.gd" type="Script" id=1]
 [ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=2]
 [ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=3]
 [ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=4]
 [ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=5]
-[ext_resource path="res://Sonoj/Tabloj/130428__mmiron__na-sharp.ogg" type="AudioStream" id=6]
+[ext_resource path="res://GUI/multkolora.png" type="Texture" id=6]
+[ext_resource path="res://GUI/multkolora_premita.png" type="Texture" id=7]
+[ext_resource path="res://Sonoj/Tabloj/130428__mmiron__na-sharp.ogg" type="AudioStream" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -241,6 +243,57 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
+[sub_resource type="StyleBoxTexture" id=25]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 6 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=26]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 7 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=27]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 6 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
 [sub_resource type="StyleBoxFlat" id=19]
 
 content_margin/left = -1.0
@@ -352,7 +405,7 @@ invert/border = 100.0
 [node name="Fono_koloroj" type="Polygon2D" parent="."]
 
 transform/pos = Vector2( 0, 160 )
-polygon = Vector2Array( 600, 220, 590, 250, 580, 270, 560, 280, 40, 280, 20, 270, 10, 250, 0, 220, 0, 460, 10, 430, 20, 410, 40, 400, 560, 400, 580, 410, 590, 430, 600, 460 )
+polygon = Vector2Array( 600, 220, 595, 245, 590, 255, 580, 265, 565, 275, 545, 280, 55, 280, 35, 275, 20, 265, 10, 255, 5, 245, 0, 220, 0, 460, 5, 435, 10, 425, 20, 415, 35, 405, 55, 400, 545, 400, 565, 405, 580, 415, 590, 425, 595, 435, 600, 460 )
 uv = Vector2Array(  )
 color = Color( 0, 0, 0, 1 )
 vertex_colors = ColorArray(  )
@@ -420,10 +473,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 460.0
+margin/left = 420.0
 margin/top = 460.0
-margin/right = 540.0
-margin/bottom = 539.0
+margin/right = 500.0
+margin/bottom = 540.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
@@ -442,10 +495,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 380.0
+margin/left = 340.0
 margin/top = 460.0
-margin/right = 460.0
-margin/bottom = 539.0
+margin/right = 420.0
+margin/bottom = 540.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
@@ -464,10 +517,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 300.0
+margin/left = 260.0
 margin/top = 460.0
-margin/right = 380.0
-margin/bottom = 539.0
+margin/right = 340.0
+margin/bottom = 540.0
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
@@ -486,10 +539,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 220.0
+margin/left = 180.0
 margin/top = 460.0
-margin/right = 300.0
-margin/bottom = 539.0
+margin/right = 260.0
+margin/bottom = 540.0
 custom_styles/hover = SubResource( 10 )
 custom_styles/pressed = SubResource( 11 )
 custom_styles/normal = SubResource( 12 )
@@ -508,10 +561,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 140.0
+margin/left = 100.0
 margin/top = 460.0
-margin/right = 220.0
-margin/bottom = 539.0
+margin/right = 180.0
+margin/bottom = 540.0
 custom_styles/hover = SubResource( 13 )
 custom_styles/pressed = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
@@ -530,13 +583,37 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 60.0
+margin/left = 20.0
 margin/top = 460.0
-margin/right = 140.0
-margin/bottom = 539.0
+margin/right = 100.0
+margin/bottom = 540.0
 custom_styles/hover = SubResource( 16 )
 custom_styles/pressed = SubResource( 17 )
 custom_styles/normal = SubResource( 18 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[node name="Multkolora" type="Button" parent="."]
+
+rect/rotation = 90.0
+rect/scale = Vector2( 0.15, 0.15 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 500.0
+margin/top = 540.0
+margin/right = 1033.0
+margin/bottom = 1073.0
+custom_styles/hover = SubResource( 25 )
+custom_styles/pressed = SubResource( 26 )
+custom_styles/normal = SubResource( 27 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -643,7 +720,6 @@ flat = false
 [node name="Malpura2" type="Polygon2D" parent="Agordoj"]
 
 transform/pos = Vector2( -225.714, 0 )
-transform/scale = Vector2( 1, 1 )
 polygon = Vector2Array( 228.571, 0, 234.286, 0, 234.286, 170, 228.571, 170 )
 uv = Vector2Array(  )
 color = Color( 0, 0, 0, 1 )
@@ -659,7 +735,6 @@ invert/border = 100.0
 [node name="Malpura3" type="Polygon2D" parent="Agordoj"]
 
 transform/pos = Vector2( 190, 0 )
-transform/scale = Vector2( 1, 1 )
 polygon = Vector2Array( 230, 0, 234.286, 0, 234.286, 170, 230, 170 )
 uv = Vector2Array(  )
 color = Color( 0, 0, 0, 1 )
@@ -753,7 +828,7 @@ flat = false
 
 [node name="Enveno_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 6 )
+stream/stream = ExtResource( 8 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 5.0
@@ -777,6 +852,8 @@ stream/buffering_ms = 500
 [connection signal="pressed" from="Rugxa" to="." method="_on_Rugxa_pressed"]
 
 [connection signal="pressed" from="Griza" to="." method="_on_Griza_pressed"]
+
+[connection signal="pressed" from="Multkolora" to="." method="_on_Multkolora_pressed"]
 
 [connection signal="pressed" from="Nigra" to="." method="_on_Nigra_pressed"]
 
